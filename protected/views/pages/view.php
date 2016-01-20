@@ -28,9 +28,9 @@
 					</div>
 				</div>
 				<div class="col-sm-12">
-					<div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms" style="min-height:600px;">
-						<article>
-							<?php if($model['key']=='Services'){ ?>
+					<?php if($model['key']=='Services'){ ?>
+						<div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms" style="min-height:800px;">
+							<article>
 								<?php /*<header class="entry-header">
 									<div class="entry-thumbnail">
 										<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl.'/images/page/'.$model->thumb_image; ?>" alt="">
@@ -38,15 +38,19 @@
 								</header>*/ ?>
 								<?php if(!Yii::app()->user->isGuest){ ?>
 									<div class="entry-content" id="content" contenteditable="true">
-										<?php echo $model->content; ?>
+										<?php echo Yii::t('pages/'.$model->id,$model->content); ?>
 									</div>
 								<?php } ?>
 								<?php if(Yii::app()->user->isGuest){ ?>
 									<div class="entry-content">
-										<?php echo $model->content; ?>
+										<?php echo Yii::t('pages/'.$model->id,$model->content); ?>
 									</div>
 								<?php } ?>
-							<?php } else { ?>
+							</article>
+						</div>
+					<?php } else { ?>
+						<div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
+							<article>
 								<?php /*<header class="entry-header">
 									<div class="entry-thumbnail">
 										<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl.'/images/page/'.$model->thumb_image; ?>" alt="">
@@ -56,14 +60,14 @@
 									<div class="entry-content">
 										<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl.'/images/page/'.$model->thumb_image; ?>" alt="">
 										<div id="content" contenteditable="true">
-											<?php echo $model->content; ?>
+											<?php echo Yii::t('pages/'.$model->id,$model->content); ?>
 										</div>
 									</div>
 								<?php } ?>
 								<?php if(Yii::app()->user->isGuest){ ?>
 									<div class="entry-content">
 										<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl.'/images/page/'.$model->thumb_image; ?>" alt="" style="min-width:25%;max-width:35%;float:left;padding-right:20px;">
-										<?php echo $model->content; ?>
+										<?php echo Yii::t('pages/'.$model->id,$model->content); ?>
 										<?php if ($model['key']=='About') { ?>
 											<h3 style="border-bottom:1px solid #ddd;padding-bottom:10px;padding-top:10px;">Video Intro:</h3>
 											<div class="embed-responsive embed-responsive-16by9">
@@ -72,9 +76,9 @@
 										<?php } ?>
 									</div>
 								<?php } ?>
-							<?php } ?>
-						</article>
-					</div>
+							</article>
+						</div>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
