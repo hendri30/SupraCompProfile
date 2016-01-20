@@ -171,6 +171,7 @@ ul.nostyle i {
     background: rgba(255, 255, 255, 0.9);
     -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #45aed6;
   }
   #main-menu.navbar-default .navbar-nav > li > a {
     padding-top: 40px;
