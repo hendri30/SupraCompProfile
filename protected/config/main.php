@@ -3,7 +3,7 @@
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
 Yii::setPathOfAlias('booster', dirname(__FILE__).'/../extensions/yiibooster');
-//Yii::setPathOfAlias('translate', dirname(__FILE__).'/../modules/translate');
+Yii::setPathOfAlias('editMe', dirname(__FILE__).'/../extensions/editMe');
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
@@ -12,7 +12,7 @@ return array(
 	'name'=>'PT SUPRABAKTI MANDIRI',
 
 	// preloading 'log' component
-	'preload'=>array('log','booster','translate'),
+	'preload'=>array('log','booster','translate','editMe'),
 
 	// autoloading model and component classes
 	'import'=>array(
@@ -56,8 +56,8 @@ return array(
 		'messages' => array(
 			'class'=>'CDbMessageSource',
 			'onMissingTranslation' => array('TranslateModule', 'missingTranslation'),
-			'sourceMessageTable' => 'tbl_source_message',
-			'translatedMessageTable' => 'tbl_message',
+			'sourceMessageTable' => 'tbl_translate_source',
+			'translatedMessageTable' => 'tbl_translate_result',
 		),
 		/* setup global translate application component */
 		'translate' => array(

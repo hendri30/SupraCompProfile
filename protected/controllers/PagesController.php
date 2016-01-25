@@ -58,8 +58,17 @@ class PagesController extends Controller
 	public function actionView($id)
 	{
 		$this->layout='main';
+		$model=Pages::model()->findAll();
+		// $criteria=new CDbCriteria(array(
+		// 	'condition'=>'t.meta_tag="Services"',
+		// ));
+		// $dataProvider=new CActiveDataProvider('Pages',array(
+		// 	'criteria'=>$criteria,
+		// 	'pagination'=>false,
+		// ));
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+			// 'dataProvider'=>$dataProvider,
 		));
 	}
 
@@ -252,7 +261,7 @@ class PagesController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$this->layout='main';
+		$this->layout='admin';
 		$dataProvider=new CActiveDataProvider('Pages');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,

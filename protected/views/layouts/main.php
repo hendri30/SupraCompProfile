@@ -29,22 +29,6 @@
 </head>
 
 <body id="home" class="homepage">
-	<div class="pull-right" style="margin-right:10px;">
-	<?php
-		// $lan='en';
-		// Yii::app()->translate->setLanguage($lan);
-		$translate=Yii::app()->translate;
-		echo $translate->dropdown();
-		if(!Yii::app()->user->isGuest){
-			// if($translate->hasMessages()){
-			// 	echo $translate->translateLink('Translate');
-			// 	echo $translate->translateDialogLink('Translate','Translate page title');
-			// }
-			echo $translate->editLink('<br>Edit translations page<br>');
-			echo $translate->missingLink('Missing translations page');
-		}
-	?>
-	</div>
 	<header id="header">
 		<nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
 			<div class="container">
@@ -56,6 +40,23 @@
 						<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand" href="<?php echo Yii::app()->createUrl('') ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" alt="logo" height="57px"></a>
+				</div>
+				<div class="pull-right">
+					<?php
+						// $lan='en';
+						// Yii::app()->translate->setLanguage($lan);
+						$translate=Yii::app()->translate;
+						echo $translate->dropdown();
+						
+						// if(!Yii::app()->user->isGuest){
+							// if($translate->hasMessages()){
+							// 	echo $translate->translateLink('Translate');
+							// 	echo $translate->translateDialogLink('Translate','Translate page title');
+							// }
+							// echo $translate->editLink('<br>Edit translations page<br>');
+							// echo $translate->missingLink('Missing translations page');
+						// }
+					?>
 				</div>
 				<div class="collapse navbar-collapse navbar-right">
 					<ul class="nav navbar-nav">

@@ -2,7 +2,8 @@
 
 class EditController extends TranslateBaseController
 {
-
+	public $layout='//layouts/admin';
+	
     public $defaultAction='admin';
     /**
 	 * Updates a particular model.

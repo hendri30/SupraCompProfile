@@ -28,10 +28,12 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
 		// layout halaman index
-		$this->layout='index';
+		$this->layout='index-page';
 		
 		// one page about
-		$criteriaAbout=new CDbCriteria(array('condition'=>"t.key='About'"));
+		$criteriaAbout=new CDbCriteria(array(
+			'condition'=>"t.key='About'",
+		));
 		$about=Pages::model()->findAll($criteriaAbout);
 
 		// one page features
@@ -160,11 +162,10 @@ class SiteController extends Controller
 	}
 
 
-	public function actionImages(){
-
-		$files=glob("images/*.{jpg,png,gif}",GLOB_BRACE);
-		// var_dump($files);	
-
+	/*public function actionImages(){
+		
+		$files=glob('images/*.{jpg,png}',GLOB_BRACE);
+		
 		$images = [
 			[
 				"image"=> Yii::app()->baseUrl."/images/users.png",
@@ -172,25 +173,13 @@ class SiteController extends Controller
 				// "folder": "Small"
 			],
 			[
-				"image"=> Yii::app()->baseUrl."/images/users.png",
-				"thumb"=> Yii::app()->baseUrl."/images/users.png",
+				"image"=> Yii::app()->baseUrl."/images/logo.png",
+				"thumb"=> Yii::app()->baseUrl."/images/logo.png",
 				// "folder": "Small"
 			],
 		];
+
 		echo CJSON::encode($images);
-
-		// $files = glob("images/*.{jpg,png,gif}",GLOB_BRACE);
-		// foreach( $files as $key => $value ) {
-		// 	$images = [
-		// 		[
-		// 			"image"=> $value,
-		// 			"thumb"=> $value,
-		// 		],
-		// 	];
-		// }
-
-		// echo CJSON::encode($images, 777);
-
-	}
+	}*/
 
 }

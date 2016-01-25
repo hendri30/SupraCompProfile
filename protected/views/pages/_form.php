@@ -53,8 +53,8 @@
 <script type="text/javascript">
 	CKEDITOR.replace('editor1',
 		{
-			"extraPlugins": "imagebrowser",
-			"imageBrowser_listUrl": '<?php echo Yii::app()->createUrl("site/images"); ?>'
+			"extraPlugins": "imgbrowse",
+			"filebrowserImageBrowseUrl": '<?php echo Yii::app()->request->baseUrl."/ckeditor/plugins/imgbrowse/imgbrowse.html?imgroot=SupraCompProfile/images/"; ?>'
 		}
 	);
 </script>

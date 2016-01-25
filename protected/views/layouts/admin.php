@@ -91,6 +91,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li><a href="<?php echo Yii::app()->createUrl('user/admin'); ?>">Manage</a></li>
 						</ul>
 					</li>
+					<li class="menu-list"><a href="#"><i class="lnr lnr-flag"></i><span>Translation</span></a>
+						<ul class="sub-menu-list">
+							<li><a href="<?php echo Yii::app()->createUrl('translate/edit/admin'); ?>">Manage</a></li>
+							<li><a href="<?php echo Yii::app()->createUrl('translate/edit/missing'); ?>">Missing</a></li>
+						</ul>
+					</li>
 					<li><a href="<?php echo Yii::app()->createUrl('gii'); ?>"><i class="lnr lnr-cog"></i><span>Generator</span></a></li>
 				</ul>
 			</div>

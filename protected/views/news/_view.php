@@ -9,8 +9,13 @@
 				<h2 class="entry-title"><a href="#"><?php echo $data->title; ?></a></h2>
 			</header>
 			<div class="entry-content">
-				<P><?php echo substr($data->content, 0,100); ?></P>
-				<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('news/view&id='.$data->id) ?>">Read More</a>
+				<P>
+					<?php 
+					$konten = substr($data->content, 0,100);
+					echo Yii::t('news/'.$data->id,$data->content);
+					?>
+				</P>
+				<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('news/view&id='.$data->id) ?>"><?php echo Yii::t('Read More','Read More'); ?></a>
 			</div>
 			<footer class="entry-meta">
 				<span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Victor</a></span>
