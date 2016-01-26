@@ -51,5 +51,10 @@
 <?php $this->endWidget(); ?>
 
 <script type="text/javascript">
-	CKEDITOR.replace('editor1');
+	CKEDITOR.replace('editor1',
+		{
+			"extraPlugins": "imgbrowse",
+			"filebrowserImageBrowseUrl": '<?php echo Yii::app()->request->baseUrl."/ckeditor/plugins/imgbrowse/imgbrowse.html?imgroot=SupraCompProfile/images/"; ?>'
+		}
+	);
 </script>

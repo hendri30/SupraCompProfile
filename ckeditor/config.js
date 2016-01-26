@@ -20,12 +20,12 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'others' },
 		'/',
 		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+		{ name: 'paragraph',   groups: [ 'list', 'blocks', 'align', 'bidi' ] },
+		{ name: 'indent'},
 		{ name: 'styles' },
 		{ name: 'colors' },
 		{ name: 'about' },
-
-		// {name: 'inlinesave'}
+		//{ name: 'inlinesave'},
 	];
 
 	// Remove some buttons provided by the standard plugins, which are
@@ -39,7 +39,7 @@ CKEDITOR.editorConfig = function( config ) {
 	config.removeDialogTabs = 'image:advanced;link:advanced';
 
 	// add extra plugins
-	config.extraPlugins='inlinesave,imagebrowser';
+	config.extraPlugins='inlinesave,imgbrowse,indent';
 
 	// allowing content template
 	config.allowedContent = true;

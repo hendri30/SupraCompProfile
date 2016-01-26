@@ -1,9 +1,9 @@
 <script src="<?php echo Yii::app()->baseUrl.'/ckeditor/ckeditor.js'; ?>"></script>
-	
+
 	<section id="blog" style="margin-bottom:30px;">
 		<div class="container">
 			<div class="section-header">
-				<h2 class="section-title text-center wow fadeInDown"><?php echo $model->name; ?></h2>
+				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('pages_name/'.$model->id,$model->name); ?></h2>
 				<p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
 			</div>
 			<div class="row">
@@ -28,9 +28,9 @@
 					</div>
 				</div>
 				<div class="col-sm-12">
-					<div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms" style="min-height:600px;">
-						<article>
-							<?php if($model['key']=='Services'){ ?>
+					<?php if($model['key']=='Services'){ ?>
+						<div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms" style="min-height:800px;">
+							<article>
 								<?php /*<header class="entry-header">
 									<div class="entry-thumbnail">
 										<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl.'/images/page/'.$model->thumb_image; ?>" alt="">
@@ -38,15 +38,19 @@
 								</header>*/ ?>
 								<?php if(!Yii::app()->user->isGuest){ ?>
 									<div class="entry-content" id="content" contenteditable="true">
-										<?php echo $model->content; ?>
+										<?php echo Yii::t('pages_content/'.$model->id,$model->content); ?>
 									</div>
 								<?php } ?>
 								<?php if(Yii::app()->user->isGuest){ ?>
 									<div class="entry-content">
-										<?php echo $model->content; ?>
+										<?php echo Yii::t('pages_content/'.$model->id,$model->content); ?>
 									</div>
 								<?php } ?>
-							<?php } else { ?>
+							</article>
+						</div>
+					<?php } else { ?>
+						<div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms" style="min-height:400px;">
+							<article>
 								<?php /*<header class="entry-header">
 									<div class="entry-thumbnail">
 										<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl.'/images/page/'.$model->thumb_image; ?>" alt="">
@@ -56,14 +60,14 @@
 									<div class="entry-content">
 										<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl.'/images/page/'.$model->thumb_image; ?>" alt="">
 										<div id="content" contenteditable="true">
-											<?php echo $model->content; ?>
+											<?php echo Yii::t('pages_content/'.$model->id,$model->content); ?>
 										</div>
 									</div>
 								<?php } ?>
 								<?php if(Yii::app()->user->isGuest){ ?>
 									<div class="entry-content">
 										<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl.'/images/page/'.$model->thumb_image; ?>" alt="" style="min-width:25%;max-width:35%;float:left;padding-right:20px;">
-										<?php echo $model->content; ?>
+										<?php echo Yii::t('pages_content/'.$model->id,$model->content); ?>
 										<?php if ($model['key']=='About') { ?>
 											<h3 style="border-bottom:1px solid #ddd;padding-bottom:10px;padding-top:10px;">Video Intro:</h3>
 											<div class="embed-responsive embed-responsive-16by9">
@@ -72,9 +76,18 @@
 										<?php } ?>
 									</div>
 								<?php } ?>
-							<?php } ?>
-						</article>
-					</div>
+							</article>
+						</div>
+						<?php if($model['meta_tag']=='Services'){ ?>
+						<div class="well" style="margin-top:10px;background-color:white;border-radius:0px;">
+							Another Services:
+							<?php /*$this->widget('booster.widgets.TbListView',array(
+								'dataProvider'=>$dataProvider,
+								'itemView'=>'_view',
+							));*/ ?>
+						</div>
+						<?php } ?>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
@@ -82,6 +95,6 @@
 
 <script type="text/javascript">
 	CKEDITOR.disableAutoInline = false;
-	CKEDITOR.config.imageBrowser_listUrl="<?php echo Yii::app()->createUrl('site/images'); ?>";
+	CKEDITOR.config.filebrowserImageBrowseUrl="<?php echo Yii::app()->request->baseUrl.'/ckeditor/plugins/imgbrowse/imgbrowse.html?imgroot=SupraCompProfile/images/'; ?>";
 	var dump_file="<?=Yii::app()->createUrl('pages/Inlinesave',['id'=>$model->id])?>";
 </script>

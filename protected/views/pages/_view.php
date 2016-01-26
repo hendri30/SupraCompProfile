@@ -1,4 +1,4 @@
-<div class="view">
+<div class="well">
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
 	<?php echo CHtml::link(CHtml::encode($data->id),array('view','id'=>$data->id)); ?>
@@ -21,7 +21,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('content')); ?>:</b>
-	<?php echo CHtml::encode($data->content); ?>
+	<?php echo CHtml::encode(substr($data->content, 0,200)); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('thumb_image')); ?>:</b>
