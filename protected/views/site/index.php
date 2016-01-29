@@ -187,7 +187,7 @@
 							</header>
 							<div class="entry-content">
 								<p><?php echo Yii::t('news/'.$berita->id,$berita->content); ?></p>
-								<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('news/'.$berita->id) ?>"><?php echo Yii::t('Read More','Read More'); ?></a>
+								<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('news/view',['id'=>$berita->id]) ?>"><?php echo Yii::t('Read More','Read More'); ?></a>
 							</div>
 							<footer class="entry-meta">
 								<span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Victor</a></span>
@@ -211,7 +211,7 @@
 								</header>
 								<div class="entry-content">
 									<p><?php echo Yii::t('news/'.$berita->id,$berita->content); ?></p>
-									<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('news/'.$berita->id) ?>"><?php echo Yii::t('Read More','Read More'); ?></a>
+									<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('news/view',['id'=>$berita->id]) ?>"><?php echo Yii::t('Read More','Read More'); ?></a>
 								</div>
 								<footer class="entry-meta">
 									<span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Campbell</a></span>

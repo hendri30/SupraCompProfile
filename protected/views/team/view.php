@@ -6,7 +6,7 @@
 	<li class="active"><?php echo $model->name; ?></li>
 </ul><hr>
 
-<a href="<?php echo Yii::app()->createUrl('team/update&id='.$model->id); ?>" class="btn btn-default"><span class="fa fa-edit"></span> Update</a>
+<a href="<?php echo Yii::app()->createUrl('team/update',['id'=>$model->id]); ?>" class="btn btn-default"><span class="fa fa-edit"></span> Update</a>
 <?php echo  CHtml::link('<div class="btn btn-danger"> <span class="fa fa-remove"></span> Delete</div>','#',array('submit'=>array('delete','id'=>$model->id),'confirm' => 'Are you sure you want to delete this item?')); ?>
 
 <div style="padding-top:20px;">

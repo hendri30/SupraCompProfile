@@ -12,17 +12,22 @@ class EditController extends TranslateBaseController
 	 */
 	public function actionCreate($id,$language)
 	{
-		$model=new Message('create');
-        $model->id=$id;
-        $model->language=$language;
-        
-		if(isset($_POST['Message'])){
-			$model->attributes=$_POST['Message'];
-			if($model->save())
-				$this->redirect(array('missing'));
-		}
+		if(!Yii::app()->user->isGuest){
+			$model=new Message('create');
+	        $model->id=$id;
+	        $model->language=$language;
+	        
+			if(isset($_POST['Message'])){
+				$model->attributes=$_POST['Message'];
+				if($model->save())
+					$this->redirect(array('missing'));
+			}
 
-		$this->render('form',array('model'=>$model));
+			$this->render('form',array('model'=>$model));
+		}
+		else
+			throw new CHttpException(404, "Error Processing Request");
+			
 	}
 	/**
 	 * Updates a particular model.
@@ -31,15 +36,19 @@ class EditController extends TranslateBaseController
 	 */
 	public function actionUpdate($id,$language)
 	{
-		$model=$this->translateLoadModel($id,$language);
+		if(!Yii::app()->user->isGuest){
+			$model=$this->translateLoadModel($id,$language);
 
-		if(isset($_POST['Message'])){
-			$model->attributes=$_POST['Message'];
-			if($model->save())
-				$this->redirect(array('admin'));
+			if(isset($_POST['Message'])){
+				$model->attributes=$_POST['Message'];
+				if($model->save())
+					$this->redirect(array('admin'));
+			}
+
+			$this->render('form',array('model'=>$model));
 		}
-
-		$this->render('form',array('model'=>$model));
+		else
+			throw new CHttpException(404, "Error Processing Request");
 	}
     /**
 	 * Deletes a record
@@ -48,17 +57,21 @@ class EditController extends TranslateBaseController
 	 */
 	public function actionDelete($id,$language)
 	{
-        if(Yii::app()->getRequest()->getIsPostRequest()){
-    		$model=$this->translateLoadModel($id,$language);
-            if($model->delete()){
-                if(Yii::app()->getRequest()->getIsAjaxRequest()){
-                    echo TranslateModule::t('Message deleted successfully');
-                    Yii::app()->end();
-                }else
-                    $this->redirect(Yii::app()->getRequest()->getUrlReferrer());
-            }
-        }else
-            throw new CHttpException(400);
+		if(!Yii::app()->user->isGuest){
+	        if(Yii::app()->getRequest()->getIsPostRequest()){
+	    		$model=$this->translateLoadModel($id,$language);
+	            if($model->delete()){
+	                if(Yii::app()->getRequest()->getIsAjaxRequest()){
+	                    echo TranslateModule::t('Message deleted successfully');
+	                    Yii::app()->end();
+	                }else
+	                    $this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+	            }
+	        }else
+	            throw new CHttpException(400);
+	   	}
+	   	else
+			throw new CHttpException(404, "Error Processing Request");
         
 	}
 
@@ -67,31 +80,39 @@ class EditController extends TranslateBaseController
 	 */
 	public function actionAdmin()
 	{
-		$model=new Message('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Message']))
-			$model->attributes=$_GET['Message'];
+		if(!Yii::app()->user->isGuest){
+			$model=new Message('search');
+			$model->unsetAttributes();  // clear any default values
+			if(isset($_GET['Message']))
+				$model->attributes=$_GET['Message'];
 
-		$this->render('admin',array(
-			'model'=>$model,
-		));
+			$this->render('admin',array(
+				'model'=>$model,
+			));
+		}
+		else
+			throw new CHttpException(404, "Error Processing Request");
 	}
     /**
 	 * 
 	 */
 	public function actionMissing()
 	{
-		$model=new MessageSource('search');
-		$model->unsetAttributes();  // clear any default values
-        
-		if(isset($_GET['MessageSource']))
-			$model->attributes=$_GET['MessageSource'];
-        
-        $model->language=TranslateModule::translator()->getLanguage();    
+		if(!Yii::app()->user->isGuest){
+			$model=new MessageSource('search');
+			$model->unsetAttributes();  // clear any default values
+	        
+			if(isset($_GET['MessageSource']))
+				$model->attributes=$_GET['MessageSource'];
+	        
+	        $model->language=TranslateModule::translator()->getLanguage();    
 
-		$this->render('missing',array(
-			'model'=>$model,
-		));
+			$this->render('missing',array(
+				'model'=>$model,
+			));
+		}
+		else
+			throw new CHttpException(404, "Error Processing Request");
 	}
     /**
 	 * Deletes a record
@@ -100,18 +121,21 @@ class EditController extends TranslateBaseController
 	 */
 	public function actionMissingdelete($id)
 	{
-        if(Yii::app()->getRequest()->getIsPostRequest()){
-    		$model=MessageSource::model()->findByPk($id);
-            if($model->delete()){
-                if(Yii::app()->getRequest()->getIsAjaxRequest()){
-                    echo TranslateModule::t('Message deleted successfully');
-                    Yii::app()->end();
-                }else
-                    $this->redirect(Yii::app()->getRequest()->getUrlReferrer());
-            }
-        }else
-            throw new CHttpException(400);
-        
+		if(!Yii::app()->user->isGuest){
+	        if(Yii::app()->getRequest()->getIsPostRequest()){
+	    		$model=MessageSource::model()->findByPk($id);
+	            if($model->delete()){
+	                if(Yii::app()->getRequest()->getIsAjaxRequest()){
+	                    echo TranslateModule::t('Message deleted successfully');
+	                    Yii::app()->end();
+	                }else
+	                    $this->redirect(Yii::app()->getRequest()->getUrlReferrer());
+	            }
+	        }else
+	            throw new CHttpException(400);
+	    }
+        else
+			throw new CHttpException(404, "Error Processing Request");
 	}
 
 	/**
