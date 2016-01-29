@@ -42,25 +42,9 @@
 					</button>
 					<a class="navbar-brand" href="index.html"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" alt="logo" height="57px"></a>
 				</div>
-				<div class="pull-right">
-					<?php
-						// $lan='en';
-						// Yii::app()->translate->setLanguage($lan);
-						$translate=Yii::app()->translate;
-						echo $translate->dropdown();
-						// if(!Yii::app()->user->isGuest){
-							// if($translate->hasMessages()){
-							// 	echo $translate->translateLink('Translate');
-							// 	echo $translate->translateDialogLink('Translate','Translate page title');
-							// }
-						// 	echo $translate->editLink('<br>Edit translations page<br>');
-						// 	echo $translate->missingLink('Missing translations page');
-						// }
-					?>
-				</div>
 				<div class="collapse navbar-collapse navbar-right">
 					<ul class="nav navbar-nav">
-						<li class="scroll active"><a href="#home">Home</a></li>
+						<li class="scroll"><a href="#home">Home</a></li>
 						<li class="scroll"><a href="#about">About Us</a></li>
 						<li class="scroll"><a href="#features">Features</a></li>
 						<li class="scroll"><a href="#services">Services</a></li>
@@ -72,6 +56,24 @@
 						<li class="scroll"><a href="<?php echo Yii::app()->createUrl('site/admin') ?>">Admin</a></li>
 						<li class="scroll"><a href="<?php echo Yii::app()->createUrl('site/logout') ?>">Logout</a></li>
 						<?php } ?>
+						<li class="scroll">
+							<a href="#">
+								<?php
+								// $lan='en';
+								// Yii::app()->translate->setLanguage($lan);
+								$translate=Yii::app()->translate;
+								echo $translate->dropdown();
+								// if(!Yii::app()->user->isGuest){
+									// if($translate->hasMessages()){
+									// 	echo $translate->translateLink('Translate');
+									// 	echo $translate->translateDialogLink('Translate','Translate page title');
+									// }
+								// 	echo $translate->editLink('<br>Edit translations page<br>');
+								// 	echo $translate->missingLink('Missing translations page');
+								// }
+								?>
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div><!--/.container-->

@@ -228,9 +228,19 @@ class PartnerController extends Controller
 	public function actionIndex()
 	{
 		$this->layout='main';
-		$dataProvider=new CActiveDataProvider('Partner');
+		$dataProviderPartner=new CActiveDataProvider('Partner',array(
+			'criteria'=>array(
+				'condition'=>'t.category="Partner"',
+			),
+		));
+		$dataProviderProduct=new CActiveDataProvider('Partner',array(
+			'criteria'=>array(
+				'condition'=>'t.category="Product"',
+			),
+		));
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'dataProviderPartner'=>$dataProviderPartner,
+			'dataProviderProduct'=>$dataProviderProduct,
 		));
 	}
 

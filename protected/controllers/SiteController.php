@@ -45,7 +45,12 @@ class SiteController extends Controller
 		$services=Pages::model()->findAll($criteriaServices);
 
 		// partner
-		$partner=Partner::model()->findAll();
+		$criteriaPartner=new CDbCriteria(array('condition'=>"t.active='1' AND t.category='Partner'"));
+		$partner=Partner::model()->findAll($criteriaPartner);
+
+		// product
+		$criteriaProduct=new CDbCriteria(array('condition'=>"t.active='1' AND t.category='Product'"));
+		$product=Partner::model()->findAll($criteriaProduct);
 
 		// team
 		$criteriaTeam=new CDbCriteria(array(
@@ -69,6 +74,7 @@ class SiteController extends Controller
 			'features'=>$features,
 			'services'=>$services,
 			'partner'=>$partner,
+			'product'=>$product,
 			'team'=>$team,
 			'news'=>$news,
 			'model'=>$model,

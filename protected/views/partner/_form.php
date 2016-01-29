@@ -17,6 +17,8 @@
 
 	<?php echo $form->textFieldGroup($model,'link',array('widgetOptions'=>array('htmlOptions'=>array('class'=>'span5','maxlength'=>255)))); ?>
 
+	<?php echo $form->dropDownListGroup($model,'category', array('widgetOptions'=>array('data'=>array("Partner"=>"Partner","Product"=>"Product",), 'htmlOptions'=>array('class'=>'input-large','empty'=>'Choose')))); ?>
+
 	<?php echo $form->dropDownListGroup($model,'active', array('widgetOptions'=>array('data'=>array("1"=>"Yes","0"=>"No",), 'htmlOptions'=>array('class'=>'input-large','empty'=>'Choose')))); ?>
 
 <div class="form-actions">

@@ -15,7 +15,7 @@
 					echo Yii::t('news/'.$data->id,$data->content);
 					?>
 				</P>
-				<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('news/view&id='.$data->id) ?>"><?php echo Yii::t('Read More','Read More'); ?></a>
+				<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('news/'.$data->id) ?>"><?php echo Yii::t('Read More','Read More'); ?></a>
 			</div>
 			<footer class="entry-meta">
 				<span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Victor</a></span>

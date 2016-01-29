@@ -10,6 +10,7 @@ class m160104_093640_partner_logo extends CDbMigration
 			'name'		=>	'varchar (120) NOT NULL',
 			'file_name'	=>	'varchar (100) NOT NULL',
 			'link'		=>	'varchar (255)',
+			'category'	=>	'varchar (7) NOT NULL',
 			'active'	=>	'boolean NOT NULL',
 		));
 	}

@@ -58,17 +58,16 @@ class PagesController extends Controller
 	public function actionView($id)
 	{
 		$this->layout='main';
-		$model=Pages::model()->findAll();
-		// $criteria=new CDbCriteria(array(
-		// 	'condition'=>'t.meta_tag="Services"',
-		// ));
-		// $dataProvider=new CActiveDataProvider('Pages',array(
-		// 	'criteria'=>$criteria,
-		// 	'pagination'=>false,
-		// ));
+
+		$criteria=new CDbCriteria(array(
+			'condition'=>'t.meta_tag="Services"',
+			'order'=>'id DESC',
+		));
+		$services=Pages::model()->findAll($criteria);
+
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
-			// 'dataProvider'=>$dataProvider,
+			'services'=>$services,
 		));
 	}
 
@@ -80,9 +79,19 @@ class PagesController extends Controller
 		{
 			$key=implode(' ', explode('-', $key));
 			$model=Pages::model()->findByAttributes(array('key'=>$key));
+			
+			$criteria=new CDbCriteria(array(
+				'condition'=>'t.meta_tag="Services"',
+				'order'=>'id DESC',
+			));
+			$services=Pages::model()->findAll($criteria);
+
 			if ($model==null)
 				throw new CHttpException(404, 'Page Not Found');
-			$this->render('view',array('model'=>$model));
+			$this->render('view',array(
+				'model'=>$model,
+				'services'=>$services,
+			));
 		}
 		else
 			throw new CHttpException(404, 'Page Not Found');
