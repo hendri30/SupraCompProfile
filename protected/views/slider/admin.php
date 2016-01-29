@@ -28,6 +28,7 @@
 				return ($data->active?"Yes":"No");
 			}
 		),
+		'sequence',
 		array(
 			'class'=>'booster.widgets.TbButtonColumn',
 			'htmlOptions'=>array('style'=>'width:80px;'),

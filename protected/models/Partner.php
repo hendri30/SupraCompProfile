@@ -8,6 +8,7 @@
  * @property string $name
  * @property string $file_name
  * @property string $link
+ * @property string $category
  * @property integer $active
  */
 class Partner extends CActiveRecord
@@ -28,14 +29,15 @@ class Partner extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, file_name, active', 'required'),
+			array('name, file_name, category, active', 'required'),
 			array('active', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>120),
 			array('file_name', 'length', 'max'=>100),
 			array('link', 'length', 'max'=>255),
+			array('category', 'length', 'max'=>7),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, file_name, link, active', 'safe', 'on'=>'search'),
+			array('id, name, file_name, link, category, active', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,6 +62,7 @@ class Partner extends CActiveRecord
 			'name' => 'Name',
 			'file_name' => 'File Name',
 			'link' => 'Link',
+			'category' => 'Category',
 			'active' => 'Active',
 		);
 	}
@@ -86,6 +89,7 @@ class Partner extends CActiveRecord
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('file_name',$this->file_name,true);
 		$criteria->compare('link',$this->link,true);
+		$criteria->compare('category',$this->category,true);
 		$criteria->compare('active',$this->active);
 
 		return new CActiveDataProvider($this, array(

@@ -3,13 +3,13 @@
 	<section id="blog" style="margin-bottom:30px;">
 		<div class="container">
 			<div class="section-header">
-				<h2 class="section-title text-center wow fadeInDown">News</h2>
+				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('News','News'); ?></h2>
 				<p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
 					<?php if(!Yii::app()->user->isGuest){ ?>
-						<a href="<?php echo Yii::app()->createUrl('news/update&id='.$model->id); ?>" class="btn btn-primary"><span class="fa fa-edit"></span> Update</a>
+						<a href="<?php echo Yii::app()->createUrl('news/update/'.$model->id); ?>" class="btn btn-primary"><span class="fa fa-edit"></span> Update</a>
 						<?php echo CHtml::link('<div class="btn btn-danger"> <span class="fa fa-remove"></span> Delete</div>','#',array('submit'=>array('delete','id'=>$model->id),'confirm' => 'Are you sure you want to delete this item?')); ?>
 					<?php } ?>
 					<div style="padding-top:20px;">
@@ -32,21 +32,20 @@
 							<header class="entry-header">
 								<div class="entry-thumbnail">
 									<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl; ?>/images/news/<?php echo $model->file_name; ?>" alt="">
-									<span class="post-format post-format-video"><i class="fa fa-film"></i></span>
 								</div>
 								<div class="entry-date"><?php echo $model->date_create; ?></div>
 								<?php if(!Yii::app()->user->isGuest){ ?>
-								<h2 class="entry-title" id="title" contenteditable="true"><?php echo $model->title; ?></h2>
+								<h2 class="entry-title" id="title" contenteditable="true"><?php echo Yii::t('news_title/'.$model->id,$model->title); ?></h2>
 								<?php } ?>
 							</header>
 							<?php if(!Yii::app()->user->isGuest){ ?>
 							<div class="entry-content" id="content" contenteditable="true">
-								<?php echo $model->content; ?>
+								<?php echo Yii::t('news/'.$model->id,$model->content); ?>
 							</div>
 							<?php } ?>
 							<?php if(Yii::app()->user->isGuest){ ?>
 							<div class="entry-content">
-								<?php echo $model->content; ?>
+								<?php echo Yii::t('news/'.$model->id,$model->content); ?>
 							</div>
 							<?php } ?>
 							<footer class="entry-meta">
@@ -74,18 +73,9 @@
 		'meta_desc',
 	),
 ));*/ ?>
-<script>var dump_file="<?=Yii::app()->createUrl('news/Inlinesave',['id'=>$model->id])?>";</script>
-<script>
-	// Turn off automatic editor creation first.
-	CKEDITOR.disableAutoInline = false;
-	CKEDITOR.inlineAll(
-		{
-			extraPlugins:'inlinesave',
-			toolbar:[
-				{name:'own1', items:['Inlinesave']},
-				//{name:'clipboard', items:['Copy','Cut','Paste']},
-			],
-		}
-	);
 
+<script type="text/javascript">
+	CKEDITOR.disableAutoInline = false;
+	CKEDITOR.config.filebrowserImageBrowseUrl="<?php echo Yii::app()->request->baseUrl.'/ckeditor/plugins/imgbrowse/imgbrowse.html?imgroot=SupraCompProfile/images/'; ?>";
+	var dump_file="<?=Yii::app()->createUrl('news/Inlinesave',['id'=>$model->id])?>";
 </script>

@@ -9,6 +9,7 @@
  * @property string $qoutes
  * @property string $file_name
  * @property integer $active
+ * @property integer $sequence
  */
 class Slider extends CActiveRecord
 {
@@ -28,14 +29,14 @@ class Slider extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('file_name, active', 'required'),
-			array('active', 'numerical', 'integerOnly'=>true),
+			array('file_name, active, sequence', 'required'),
+			array('active, sequence', 'numerical', 'integerOnly'=>true),
 			array('caption', 'length', 'max'=>100),
 			array('file_name', 'length', 'max'=>255),
 			array('qoutes', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, caption, qoutes, file_name, active', 'safe', 'on'=>'search'),
+			array('id, caption, qoutes, file_name, active, sequence', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,6 +62,7 @@ class Slider extends CActiveRecord
 			'qoutes' => 'Qoutes',
 			'file_name' => 'File',
 			'active' => 'Active',
+			'sequence' => 'Sequence',
 		);
 	}
 
@@ -87,6 +89,7 @@ class Slider extends CActiveRecord
 		$criteria->compare('qoutes',$this->qoutes,true);
 		$criteria->compare('file_name',$this->file_name,true);
 		$criteria->compare('active',$this->active);
+		$criteria->compare('sequence',$this->sequence);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

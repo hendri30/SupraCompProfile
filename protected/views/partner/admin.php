@@ -25,6 +25,10 @@
 		),
 		'link',
 		array(
+			'name'=>'category',
+			'filter'=>array('Partner'=>'Partner','Product'=>'Product'),
+		),
+		array(
 			'name'=>'active',
 			'filter'=>array('1'=>'Yes','0'=>'No'),
 			'value'=>function($data){

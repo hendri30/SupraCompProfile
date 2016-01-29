@@ -125,46 +125,13 @@
 				<p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
 			</div>
 			<div class="row text-center">
+				<?php $i=1; foreach ($product as $produk): ?>
 				<div class="col-sm-6 col-md-3">
 					<div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
-						<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl; ?>/images/principals/rtt.png" alt="">
+						<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl.'/images/partner/'.$produk->file_name; ?>" alt="">
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
-						<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl; ?>/images/principals/almex.png" alt="">
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
-						<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl; ?>/images/principals/martin-white.png" alt="">
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
-						<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl; ?>/images/principals/contitech-white.png" alt="">
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="center wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
-						<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl; ?>/images/principals/trelleborg.png" alt="">
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="center wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
-						<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl; ?>/images/principals/lorbrand.png" alt="">
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
-						<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl; ?>/images/principals/mclanahan.png" alt="">
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="center wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
-						<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl; ?>/images/principals/mlt.png" alt="">
-					</div>
-				</div>
+				<?php $i++; endforeach; ?>
 			</div>
 		</div>
 	</section><!--/#work-process-->

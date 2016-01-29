@@ -79,12 +79,18 @@
 							</article>
 						</div>
 						<?php if($model['meta_tag']=='Services'){ ?>
-						<div class="well" style="margin-top:10px;background-color:white;border-radius:0px;">
-							Another Services:
-							<?php /*$this->widget('booster.widgets.TbListView',array(
-								'dataProvider'=>$dataProvider,
-								'itemView'=>'_view',
-							));*/ ?>
+						<div class="col-md-12" style="margin-top:10px;border:1px solid #e3e3e3;">
+							<p>Another Services:</p>
+							<?php $i=1; foreach ($services as $layanan): ?>
+							<div class="col-md-2">
+								<div class="well" style="border-radius:0px;padding:0px 0px 10px 0px;border:1px solid #f5f5f5;">
+									<a href="<?php echo Yii::app()->createUrl('pages/'.$layanan->id) ?>">
+										<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl.'/images/page/'.$layanan->thumb_image; ?>" alt="">
+										<i>&nbsp;&nbsp;&nbsp;<?php echo substr($layanan->name, 0,15).'...'; ?></i>
+									</a>
+								</div>
+							</div>
+							<?php $i++; endforeach; ?>
 						</div>
 						<?php } ?>
 					<?php } ?>

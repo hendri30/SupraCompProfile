@@ -36,5 +36,6 @@
 			'value'=>CHtml::image(Yii::app()->request->baseUrl.'/images/slider/'.$model->file_name,'image', array("class"=>"img-responsive","alt"=>"","style"=>"width:100%;")),
 		),
 		'active',
+		'sequence',
 	),
 )); ?>
