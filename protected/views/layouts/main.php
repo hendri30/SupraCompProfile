@@ -55,23 +55,21 @@
 						<li class="scroll"><a href="<?php echo Yii::app()->createUrl('site/admin') ?>">Admin</a></li>
 						<li class="scroll"><a href="<?php echo Yii::app()->createUrl('site/logout') ?>">Logout</a></li>
 						<?php } ?>
-						<li class="scroll">
-							<a href="#">
-								<?php
-								// $lan='en';
-								// Yii::app()->translate->setLanguage($lan);
-								$translate=Yii::app()->translate;
-								echo $translate->dropdown();
-								// if(!Yii::app()->user->isGuest){
-									// if($translate->hasMessages()){
-									// 	echo $translate->translateLink('Translate');
-									// 	echo $translate->translateDialogLink('Translate','Translate page title');
-									// }
-								// 	echo $translate->editLink('<br>Edit translations page<br>');
-								// 	echo $translate->missingLink('Missing translations page');
+						<li class="scroll" style="margin-left:10px;padding-top:40px;padding-bottom:40px;">
+							<?php
+							// $lan='en';
+							// Yii::app()->translate->setLanguage($lan);
+							$translate=Yii::app()->translate;
+							echo $translate->dropdown();
+							// if(!Yii::app()->user->isGuest){
+								// if($translate->hasMessages()){
+								// 	echo $translate->translateLink('Translate');
+								// 	echo $translate->translateDialogLink('Translate','Translate page title');
 								// }
-								?>
-							</a>
+							// 	echo $translate->editLink('<br>Edit translations page<br>');
+							// 	echo $translate->missingLink('Missing translations page');
+							// }
+							?>
 						</li>
 					</ul>
 				</div>
