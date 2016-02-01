@@ -6,7 +6,7 @@
 	<li class="active"><?php echo $model->name; ?></li>
 </ul><hr>
 
-<a href="<?php echo Yii::app()->createUrl('pages/view/id/'.$model->id); ?>" class="btn btn-default"><span class="fa fa-edit"></span> Inline Editing</a>
+<a href="<?php echo Yii::app()->createUrl('pages/view',['id'=>$model->id]); ?>" class="btn btn-default"><span class="fa fa-edit"></span> Inline Editing</a>
 
 <?php $this->widget('booster.widgets.TbAlert', array(
 	'fade' => true,

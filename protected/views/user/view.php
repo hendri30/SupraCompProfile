@@ -6,7 +6,7 @@
 	<li class="active"><?php echo $model->username; ?></li>
 </ul><hr>
 
-<a href="<?php echo Yii::app()->createUrl('user/update/id/'.$model->id); ?>" class="btn btn-default"><span class="fa fa-edit"></span> Update</a>
+<a href="<?php echo Yii::app()->createUrl('user/update',['id'=>$model->id]); ?>" class="btn btn-default"><span class="fa fa-edit"></span> Update</a>
 
 <div style="padding-top:20px;">
 <?php $this->widget('booster.widgets.TbDetailView',array(

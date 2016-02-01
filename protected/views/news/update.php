@@ -6,6 +6,8 @@
 	<li class="active"><?php echo $model->title; ?></li>
 </ul><hr>
 
+<a href="<?php echo Yii::app()->createUrl('news/view',['id'=>$model->id]); ?>" class="btn btn-default"><span class="fa fa-edit"></span> Inline Editing</a>
+
 <?php $this->widget('booster.widgets.TbAlert', array(
 	'fade' => true,
 	'closeText' => '&times;',

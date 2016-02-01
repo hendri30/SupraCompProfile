@@ -131,7 +131,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										</div>	
 									</a>
 									<ul class="dropdown-menu drp-mnu">
-										<li> <a href="<?php echo Yii::app()->createUrl('user/view/'.Yii::app()->user->id) ?>"><i class="fa fa-user"></i>Profile</a> </li> 
+										<li> <a href="<?php echo Yii::app()->createUrl('user/view',['id'=>Yii::app()->user->id]) ?>"><i class="fa fa-user"></i>Profile</a> </li> 
 										<li> <a href="<?php echo Yii::app()->createUrl('site/logout') ?>"><i class="fa fa-sign-out"></i> Logout</a> </li>
 									</ul>
 								</li>
