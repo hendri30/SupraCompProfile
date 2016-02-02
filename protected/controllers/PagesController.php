@@ -58,16 +58,17 @@ class PagesController extends Controller
 	public function actionView($id)
 	{
 		$this->layout='main';
-
-		$criteria=new CDbCriteria(array(
-			'condition'=>'t.meta_tag="Services"',
-			'order'=>'id DESC',
-		));
-		$services=Pages::model()->findAll($criteria);
-
+		$model=Pages::model()->findAll();
+		// $criteria=new CDbCriteria(array(
+		// 	'condition'=>'t.meta_tag="Services"',
+		// ));
+		// $dataProvider=new CActiveDataProvider('Pages',array(
+		// 	'criteria'=>$criteria,
+		// 	'pagination'=>false,
+		// ));
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
-			'services'=>$services,
+			// 'dataProvider'=>$dataProvider,
 		));
 	}
 
@@ -75,23 +76,31 @@ class PagesController extends Controller
 	public function actionUrl($key)
 	{
 		$this->layout='main';
+
 		if($key)
 		{
+
 			$key=implode(' ', explode('-', $key));
 			$model=Pages::model()->findByAttributes(array('key'=>$key));
-			
-			$criteria=new CDbCriteria(array(
-				'condition'=>'t.meta_tag="Services"',
-				'order'=>'id DESC',
-			));
-			$services=Pages::model()->findAll($criteria);
+			// var_dump($model);
 
 			if ($model==null)
 				throw new CHttpException(404, 'Page Not Found');
-			$this->render('view',array(
-				'model'=>$model,
-				'services'=>$services,
-			));
+			// var_dump($model);
+			$services = [];
+			// die('aaa');
+			// die('bbbccc');
+			// var_dump($key);
+			if(preg_match('/service_/', $key)){
+				// die('aaa000');
+				$q = new CDbCriteria();
+				$q->addSearchCondition("'key'", 'service_');
+				 
+				$services = Pages::model()->findAllByAttributes([],"meta_tag like 'Services'");
+
+				// var_dump($services);
+			}
+			$this->render('view',array('model'=>$model,'services'=>$services));
 		}
 		else
 			throw new CHttpException(404, 'Page Not Found');

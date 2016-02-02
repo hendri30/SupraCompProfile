@@ -4,7 +4,7 @@
 		<div class="container">
 			<div class="section-header">
 				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('pages_name/'.$model->id,$model->name); ?></h2>
-				<p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
 			</div>
 			<div class="row">
 				<div class="col-md-12">
@@ -58,17 +58,19 @@
 								</header>*/ ?>
 								<?php if(!Yii::app()->user->isGuest){ ?>
 									<div class="entry-content">
-										<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl.'/images/page/'.$model->thumb_image; ?>" alt="">
+										
 										<div id="content" contenteditable="true">
+											<img class="img-responsive" style="display:inline;" src="<?php echo Yii::app()->request->baseUrl.'/images/page/'.$model->thumb_image; ?>" alt="">
 											<?php echo Yii::t('pages_content/'.$model->id,$model->content); ?>
 										</div>
 									</div>
 								<?php } ?>
 								<?php if(Yii::app()->user->isGuest){ ?>
 									<div class="entry-content">
-										<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl.'/images/page/'.$model->thumb_image; ?>" alt="" style="min-width:25%;max-width:35%;float:left;padding-right:20px;">
+										<img class="img-responsive"  style="display:inline;" src="<?php echo Yii::app()->request->baseUrl.'/images/page/'.$model->thumb_image; ?>" alt="" style="min-width:25%;max-width:35%;float:left;padding-right:20px;">
 										<?php echo Yii::t('pages_content/'.$model->id,$model->content); ?>
 										<?php if ($model['key']=='About') { ?>
+											
 											<h3 style="border-bottom:1px solid #ddd;padding-bottom:10px;padding-top:10px;">Video Intro:</h3>
 											<div class="embed-responsive embed-responsive-16by9">
 												<iframe src="https://www.youtube.com/embed/5tSTmwwGT80" frameborder="0" allowfullscreen></iframe>
@@ -81,16 +83,20 @@
 						<?php if($model['meta_tag']=='Services'){ ?>
 						<div class="col-md-12" style="margin-top:10px;border:1px solid #e3e3e3;">
 							<p>Another Services:</p>
-							<?php $i=1; foreach ($services as $layanan): ?>
+							<?php 
+							// var_dump($services);
+							// die('aaaa');
+							?>
+							<?php foreach ($services as $layanan): ?>
 							<div class="col-md-2">
 								<div class="well" style="border-radius:0px;padding:0px 0px 10px 0px;border:1px solid #f5f5f5;">
-									<a href="<?php echo Yii::app()->createUrl('pages/'.$layanan->id) ?>">
+									<a href="<?php echo Yii::app()->createUrl('pages/view',['id'=>$layanan->id]) ?>">
 										<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl.'/images/page/'.$layanan->thumb_image; ?>" alt="">
 										<i>&nbsp;&nbsp;&nbsp;<?php echo substr($layanan->name, 0,15).'...'; ?></i>
 									</a>
 								</div>
 							</div>
-							<?php $i++; endforeach; ?>
+							<?php endforeach; ?>
 						</div>
 						<?php } ?>
 					<?php } ?>
