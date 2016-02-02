@@ -67,7 +67,7 @@
 								<?php } ?>
 								<?php if(Yii::app()->user->isGuest){ ?>
 									<div class="entry-content">
-										<img class="img-responsive"  style="display:inline;" src="<?php echo Yii::app()->request->baseUrl.'/images/page/'.$model->thumb_image; ?>" alt="" style="min-width:25%;max-width:35%;float:left;padding-right:20px;">
+										<img class="img-responsive"  style="display:inline;width:35%;float:left;padding-right:30px;padding-bottom:10px;" src="<?php echo Yii::app()->request->baseUrl.'/images/page/'.$model->thumb_image; ?>" alt="">
 										<?php echo Yii::t('pages_content/'.$model->id,$model->content); ?>
 										<?php if ($model['key']=='About') { ?>
 											
@@ -83,20 +83,16 @@
 						<?php if($model['meta_tag']=='Services'){ ?>
 						<div class="col-md-12" style="margin-top:10px;border:1px solid #e3e3e3;">
 							<p>Another Services:</p>
-							<?php 
-							// var_dump($services);
-							// die('aaaa');
-							?>
-							<?php foreach ($services as $layanan): ?>
+							<?php foreach ($services as $layanan){ ?>
 							<div class="col-md-2">
 								<div class="well" style="border-radius:0px;padding:0px 0px 10px 0px;border:1px solid #f5f5f5;">
-									<a href="<?php echo Yii::app()->createUrl('pages/view',['id'=>$layanan->id]) ?>">
+									<a href="<?php echo Yii::app()->createUrl($layanan->key) ?>">
 										<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl.'/images/page/'.$layanan->thumb_image; ?>" alt="">
 										<i>&nbsp;&nbsp;&nbsp;<?php echo substr($layanan->name, 0,15).'...'; ?></i>
 									</a>
 								</div>
 							</div>
-							<?php endforeach; ?>
+							<?php } ?>
 						</div>
 						<?php } ?>
 					<?php } ?>
