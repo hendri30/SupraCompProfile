@@ -69,6 +69,7 @@ class SliderController extends Controller
 			$fileName="{$wkt}_{$rnd}_{$file}";
 			$model->attributes=$_POST['Slider'];
 			$model->file_name=$fileName;
+			$model->last_update=new CDbExpression('NOW()');
 			if(!empty($file)){
 				if($model->save()){
 					$file->saveAs(Yii::app()->basePath.self::URLUPLOAD.$model->file_name);
@@ -104,7 +105,7 @@ class SliderController extends Controller
 				if(empty($cekfile)){
 					$model->attributes=$_POST['Slider'];
 					$model->file_name=$file_name;
-					
+					$model->last_update=new CDbExpression('NOW()');
 					if($model->save()){
 						$notif=Yii::app()->getComponent('user');
 						$notif->setFlash('success',"<strong>Update Slider Success!</strong>");
@@ -124,7 +125,7 @@ class SliderController extends Controller
 					$file=CUploadedFile::getInstance($model,'file_name');
 					$fileName="{$wkt}_{$rnd}_{$file}";
 					$model->file_name=$fileName;
-					
+					$model->last_update=new CDbExpression('NOW()');
 					if($model->save()){
 						$file->saveAs(Yii::app()->basePath.self::URLUPLOAD.$model->file_name.'');
 						$notif=Yii::app()->getComponent('user');
@@ -142,7 +143,7 @@ class SliderController extends Controller
 				if(empty($cekfile)){
 					$model->attributes=$_POST['Slider'];
 					$model->file_name=$file_name;
-					
+					$model->last_update=new CDbExpression('NOW()');
 					if($model->save()){
 						$notif=Yii::app()->getComponent('user');
 						$notif->setFlash('success',"<strong>Update Slider Success!</strong>");
@@ -161,7 +162,7 @@ class SliderController extends Controller
 					$file=CUploadedFile::getInstance($model,'file_name');
 					$fileName="{$wkt}_{$rnd}_{$file}";
 					$model->file_name=$fileName;
-					
+					$model->last_update=new CDbExpression('NOW()');
 					if($model->save()){
 						$file->saveAs(Yii::app()->basePath.self::URLUPLOAD.$model->file_name.'');
 						$notif=Yii::app()->getComponent('user');

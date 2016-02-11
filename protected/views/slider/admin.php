@@ -29,6 +29,7 @@
 			}
 		),
 		'sequence',
+		'last_update',
 		array(
 			'class'=>'booster.widgets.TbButtonColumn',
 			'htmlOptions'=>array('style'=>'width:80px;'),

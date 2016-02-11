@@ -49,7 +49,7 @@ class SiteController extends Controller
 		$partner=Partner::model()->findAll($criteriaPartner);
 
 		// product
-		$criteriaProduct=new CDbCriteria(array('condition'=>"t.active='1' AND t.category='Product'"));
+		$criteriaProduct=new CDbCriteria(array('condition'=>"t.active='1' AND t.category='Distributor'"));
 		$product=Partner::model()->findAll($criteriaProduct);
 
 		// team
@@ -107,6 +107,21 @@ class SiteController extends Controller
 		{
 			echo 'Error ';
 		}
+	}
+
+	// sitemap
+	public function actionSitemap()
+	{
+		$pages=Pages::model()->findAll();
+
+		$news=News::model()->findAll();
+
+		header('Content-Type: application/xml');
+
+		$this->renderPartial('../site/sitemap',array(
+			'pages'=>$pages,
+			'news'=>$news,
+		));
 	}
 
 	// halaman admin

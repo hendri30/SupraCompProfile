@@ -29,6 +29,7 @@
 </head>
 
 <body id="home" class="homepage">
+
 	<header id="header">
 		<nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
 			<div class="container">
@@ -39,47 +40,36 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="<?php echo Yii::app()->createUrl('') ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" alt="logo" height="57px"></a>
+					<a class="navbar-brand" href="index.html"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" alt="logo" height="57px"></a>
 				</div>
 				<div class="collapse navbar-collapse navbar-right">
 					<ul class="nav navbar-nav">
-						<li class="scroll"><a href="<?php echo Yii::app()->createUrl('') ?>">Home</a></li>
-						<li class="scroll"><a href="<?php echo Yii::app()->createUrl('about') ?>">About Us</a></li>
-						<li class="scroll"><a href="<?php echo Yii::app()->createUrl('features') ?>">Features</a></li>
-						<li class="scroll"><a href="<?php echo Yii::app()->createUrl('services') ?>">Services</a></li>
-						<li class="scroll"><a href="<?php echo Yii::app()->createUrl('partner') ?>">Partner</a></li>
-						<li class="scroll"><a href="<?php echo Yii::app()->createUrl('team') ?>">Team</a></li>
-						<li class="scroll"><a href="<?php echo Yii::app()->createUrl('news') ?>">Blog</a></li> 
-						<li class="scroll"><a href="<?php echo Yii::app()->createUrl('contacts/create') ?>">Contact</a></li>
+						<li class="scroll active"><a href="#home">Home</a></li>
+						<li class="scroll"><a href="#about">About Us</a></li>
+						<li class="scroll"><a href="#features">Features</a></li>
+						<li class="scroll"><a href="#services">Services</a></li>
+						<li class="scroll"><a href="#portfolio">Partner</a></li>
+						<li class="scroll"><a href="#meet-team">Team</a></li>
+						<li class="scroll"><a href="#blog">Blog</a></li> 
+						<li class="scroll"><a href="#get-in-touch">Contact</a></li>
 						<?php if(!Yii::app()->user->isGuest){ ?>
 						<li class="scroll"><a href="<?php echo Yii::app()->createUrl('site/admin') ?>">Admin</a></li>
 						<li class="scroll"><a href="<?php echo Yii::app()->createUrl('site/logout') ?>">Logout</a></li>
 						<?php } ?>
-						<li class="scroll" style="margin-left:10px;padding-top:40px;padding-bottom:40px;">
-							<?php
-							// $lan='en';
-							// Yii::app()->translate->setLanguage($lan);
-							$translate=Yii::app()->translate;
-							echo $translate->dropdown();
-							// if(!Yii::app()->user->isGuest){
-								// if($translate->hasMessages()){
-								// 	echo $translate->translateLink('Translate');
-								// 	echo $translate->translateDialogLink('Translate','Translate page title');
-								// }
-							// 	echo $translate->editLink('<br>Edit translations page<br>');
-							// 	echo $translate->missingLink('Missing translations page');
-							// }
-							?>
-						</li>
 					</ul>
 				</div>
 			</div><!--/.container-->
 		</nav><!--/nav-->
 	</header><!--/header-->
 
-	<!-- CONTENT -->
-		<?php echo $content; ?>
-	<!-- END CONTENT -->
+	<section id="main-slider">
+		<div class="owl-carousel">
+			<?php $this->widget('SliderWidget'); ?>
+		</div><!--/.owl-carousel-->
+	</section><!--/#main-slider-->
+
+	<!-- content index -->
+	<?php echo $content; ?>
 
 	<footer id="footer">
 		<div class="container">
@@ -87,8 +77,19 @@
 				<div class="col-sm-6">
 					&copy; <?php echo date('Y'); ?> PT SUPRABAKTI MANDIRI. Designed by <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>
 				</div>
-				<div class="col-sm-6" style="text-align:end;">
-					<a href="<?php echo Yii::app()->createUrl('site/sitemap'); ?>">SITEMAP</a>
+				<div class="col-sm-6">
+					<ul class="social-icons">
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+						<li><a href="#"><i class="fa fa-behance"></i></a></li>
+						<li><a href="#"><i class="fa fa-flickr"></i></a></li>
+						<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="#"><i class="fa fa-github"></i></a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -110,4 +111,3 @@
 
 </body>
 </html>
-

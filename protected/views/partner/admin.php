@@ -26,7 +26,7 @@
 		'link',
 		array(
 			'name'=>'category',
-			'filter'=>array('Partner'=>'Partner','Product'=>'Product'),
+			'filter'=>array('Partner'=>'Partner','Distributor'=>'Distributor'),
 		),
 		array(
 			'name'=>'active',

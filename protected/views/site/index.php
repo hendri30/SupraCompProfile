@@ -89,6 +89,24 @@
 		</div><!--/.container-->
 	</section><!--/#services-->
 
+	<section id="work-process">
+		<div class="container">
+			<div class="section-header">
+				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('Authorized Distributor','Authorized Distributor'); ?></h2>
+				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
+			</div>
+			<div class="row text-center">
+				<?php $i=1; foreach ($product as $produk): ?>
+				<div class="col-sm-6 col-md-3">
+					<div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
+						<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl.'/images/partner/'.$produk->file_name; ?>" alt="">
+					</div>
+				</div>
+				<?php $i++; endforeach; ?>
+			</div>
+		</div>
+	</section><!--/#work-process-->
+
 	<section id="portfolio">
 		<div class="container">
 			<div class="section-header">
@@ -117,24 +135,6 @@
 			</div>
 		</div><!--/.container-->
 	</section><!--/#portfolio-->
-
-	<section id="work-process">
-		<div class="container">
-			<div class="section-header">
-				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('Our Product','Our Product'); ?></h2>
-				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
-			</div>
-			<div class="row text-center">
-				<?php $i=1; foreach ($product as $produk): ?>
-				<div class="col-sm-6 col-md-3">
-					<div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
-						<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl.'/images/partner/'.$produk->file_name; ?>" alt="">
-					</div>
-				</div>
-				<?php $i++; endforeach; ?>
-			</div>
-		</div>
-	</section><!--/#work-process-->
 
 	<section id="meet-team">
 		<div class="container">

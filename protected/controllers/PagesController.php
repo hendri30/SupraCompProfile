@@ -120,6 +120,7 @@ class PagesController extends Controller
 			$fileName="{$wkt}_{$rnd}_{$file}";
 			$model->attributes=$_POST['Pages'];
 			$model->thumb_image=$fileName;
+			$model->last_update=new CDbExpression('NOW()');
 			if(isset($file)){
 				if($model->save()){
 					$file->saveAs(Yii::app()->basePath.self::URLUPLOAD.$model->thumb_image);
@@ -163,7 +164,7 @@ class PagesController extends Controller
 				if(empty($cekfile)){
 					$model->attributes=$_POST['Pages'];
 					$model->thumb_image=$thumb_image;
-					
+					$model->last_update=new CDbExpression('NOW()');
 					if($model->save()){
 						$notif=Yii::app()->getComponent('user');
 						$notif->setFlash('success',"<strong>Update Pages Success!</strong>");
@@ -183,7 +184,7 @@ class PagesController extends Controller
 					$file=CUploadedFile::getInstance($model,'thumb_image');
 					$fileName="{$wkt}_{$rnd}_{$file}";
 					$model->thumb_image=$fileName;
-					
+					$model->last_update=new CDbExpression('NOW()');
 					if($model->save()){
 						$file->saveAs(Yii::app()->basePath.self::URLUPLOAD.$model->thumb_image.'');
 						$notif=Yii::app()->getComponent('user');
@@ -201,7 +202,7 @@ class PagesController extends Controller
 				if(empty($cekfile)){
 					$model->attributes=$_POST['Pages'];
 					$model->thumb_image=$thumb_image;
-					
+					$model->last_update=new CDbExpression('NOW()');
 					if($model->save()){
 						$notif=Yii::app()->getComponent('user');
 						$notif->setFlash('success',"<strong>Update Pages Success!</strong>");
@@ -220,7 +221,7 @@ class PagesController extends Controller
 					$file=CUploadedFile::getInstance($model,'thumb_image');
 					$fileName="{$wkt}_{$rnd}_{$file}";
 					$model->thumb_image=$fileName;
-					
+					$model->last_update=new CDbExpression('NOW()');
 					if($model->save()){
 						$file->saveAs(Yii::app()->basePath.self::URLUPLOAD.$model->thumb_image.'');
 						$notif=Yii::app()->getComponent('user');
