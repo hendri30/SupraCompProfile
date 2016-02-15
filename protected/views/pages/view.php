@@ -3,7 +3,7 @@
 	<section id="blog" style="margin-bottom:30px;">
 		<div class="container">
 			<div class="section-header">
-				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('pages_name/'.$model->id,$model->name); ?></h2>
+				<h2 class="section-title text-center wow fadeInDown"><?php echo $model->name; ?></h2>
 				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
 			</div>
 			<div class="row">
@@ -38,12 +38,12 @@
 								</header>*/ ?>
 								<?php if(!Yii::app()->user->isGuest){ ?>
 									<div class="entry-content" id="content" contenteditable="true">
-										<?php echo Yii::t('pages_content/'.$model->id,$model->content); ?>
+										<?php echo $model->content; ?>
 									</div>
 								<?php } ?>
 								<?php if(Yii::app()->user->isGuest){ ?>
 									<div class="entry-content">
-										<?php echo Yii::t('pages_content/'.$model->id,$model->content); ?>
+										<?php echo $model->content; ?>
 									</div>
 								<?php } ?>
 							</article>
@@ -61,14 +61,14 @@
 										
 										<div id="content" contenteditable="true">
 											<img class="img-responsive" style="display:inline;" src="<?php echo Yii::app()->request->baseUrl.'/images/page/'.$model->thumb_image; ?>" alt="">
-											<?php echo Yii::t('pages_content/'.$model->id,$model->content); ?>
+											<?php echo $model->content; ?>
 										</div>
 									</div>
 								<?php } ?>
 								<?php if(Yii::app()->user->isGuest){ ?>
 									<div class="entry-content">
 										<img class="img-responsive"  style="display:inline;width:35%;float:left;padding-right:30px;padding-bottom:10px;" src="<?php echo Yii::app()->request->baseUrl.'/images/page/'.$model->thumb_image; ?>" alt="">
-										<?php echo Yii::t('pages_content/'.$model->id,$model->content); ?>
+										<?php echo $model->content; ?>
 										<?php if ($model['key']=='About') { ?>
 											
 											<h3 style="border-bottom:1px solid #ddd;padding-bottom:10px;padding-top:10px;">Video Intro:</h3>

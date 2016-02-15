@@ -19,7 +19,7 @@
 			<div class="section-header">
 				<h2 class="section-title text-center wow fadeInDown">
 					<?php foreach($about as $tentang){} ?>
-					<?php echo Yii::t('pages_name/'.$tentang->id,$tentang->name); ?>
+					<?php echo $tentang->name; ?>
 				</h2>
 				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
 			</div>
@@ -33,10 +33,7 @@
 				</div>
 				<div class="col-sm-6 wow fadeInRight">
 					<h3 class="column-title"><?php echo Yii::t('Line Of Bussines','Line Of Bussines'); ?></h3>
-					<?php
-					$konten=Yii::t('pages_content/'.$tentang->id,$tentang->content);
-					echo substr($konten,0,700);
-					?>
+					<?php echo substr($tentang->content,0,690).'...'; ?>
 					<div>
 						<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('about'); ?>"><?php echo Yii::t('Learn More','Learn More'); ?></a>
 					</div>
@@ -50,7 +47,7 @@
 			<div class="section-header">
 				<h2 class="section-title text-center wow fadeInDown">
 					<?php foreach($features as $fitur){} ?>
-					<?php echo Yii::t('pages_name/'.$fitur->id,$fitur->name); ?>
+					<?php echo $fitur->name; ?>
 				</h2>
 				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
 			</div>
@@ -61,7 +58,7 @@
 				<div class="col-sm-6">
 					<div class="media service-box wow fadeInRight">
 						<div class="pull-left">
-							<?php echo Yii::t('pages_content/'.$fitur->id,$fitur->content); ?>
+							<?php echo $fitur->content; ?>
 							<div>
 								<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('features'); ?>"><?php echo Yii::t('Learn More','Learn More'); ?></a>
 							</div>
@@ -77,13 +74,13 @@
 			<div class="section-header">
 				<h2 class="section-title text-center wow fadeInDown">
 					<?php foreach ($services as $layanan) {} ?>
-					<?php echo Yii::t('pages_name/'.$layanan->id,$layanan->name); ?>
+					<?php echo $layanan->name; ?>
 				</h2>
 				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
 			</div>
 			<div class="row">
 				<div class="features">				
-					<?php echo Yii::t('pages_content/'.$layanan->id,$layanan->content); ?>
+					<?php echo $layanan->content; ?>
 				</div>
 			</div><!--/.row-->
 		</div><!--/.container-->
@@ -186,7 +183,7 @@
 								<h2 class="entry-title"><a href="#"><?php echo $berita->title; ?></a></h2>
 							</header>
 							<div class="entry-content">
-								<p><?php echo Yii::t('news/'.$berita->id,$berita->content); ?></p>
+								<p><?php echo $berita->content; ?></p>
 								<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('news/view',['id'=>$berita->id]) ?>"><?php echo Yii::t('Read More','Read More'); ?></a>
 							</div>
 							<footer class="entry-meta">
@@ -210,7 +207,7 @@
 									<h2 class="entry-title"><a href="#"><?php echo $berita->title; ?></a></h2>
 								</header>
 								<div class="entry-content">
-									<p><?php echo Yii::t('news/'.$berita->id,$berita->content); ?></p>
+									<p><?php echo $berita->content; ?></p>
 									<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('news/view',['id'=>$berita->id]) ?>"><?php echo Yii::t('Read More','Read More'); ?></a>
 								</div>
 								<footer class="entry-meta">
