@@ -10,10 +10,7 @@
 			</header>
 			<div class="entry-content">
 				<P>
-					<?php 
-					$konten = substr($data->content, 0,100);
-					echo Yii::t('news/'.$data->id,$data->content);
-					?>
+					<?php echo substr($data->content, 0,100); ?>
 				</P>
 				<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('news/view',['id'=>$data->id]) ?>"><?php echo Yii::t('Read More','Read More'); ?></a>
 			</div>

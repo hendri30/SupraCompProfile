@@ -243,7 +243,9 @@ ul.nostyle i {
   font-size: 36px;
   line-height: 1;
   text-transform: uppercase;
-  color: rgb(250, 51, 54);
+  color: rgb(250,51,54);
+  background: rgba(0, 0, 0, 0.5);
+
 }
 #main-slider .slider-inner h2 > span {
   color: red;
@@ -541,7 +543,7 @@ ul.nostyle i {
 }
 #work-process {
   padding: 100px 0 50px;
-  background: #20222e url(../images/work-process/bg-red.jpg) no-repeat 0 0;
+  background: #20222e url(../images/work-process/bg.jpg) no-repeat 0 0;
   background-size: cover;
   color: #fff;
 }
