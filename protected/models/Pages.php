@@ -116,8 +116,8 @@ class Pages extends CActiveRecord
 	{
 		$bahasa=Yii::app()->translate->getLanguage();
 		if ($bahasa) {
-			$this->name = Yii::t('pages-name/'.$this->id,$this->name);
-			$this->content = Yii::t('pages-content/'.$this->id,$this->content);
+			$this->name = Yii::t('pages-name/'.$this->id, $this->name);
+			$this->content = Yii::t('pages-content/'.$this->id, $this->content);
 			return true;
 		}
 	}
