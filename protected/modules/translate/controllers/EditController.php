@@ -16,6 +16,7 @@ class EditController extends TranslateBaseController
 			$model=new Message('create');
 	        $model->id=$id;
 	        $model->language=$language;
+	        // $model->source->message = "";
 	        
 			if(isset($_POST['Message'])){
 				$model->attributes=$_POST['Message'];

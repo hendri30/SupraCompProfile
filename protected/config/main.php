@@ -39,6 +39,7 @@ return array(
 	// language
 	'language'=>'en',
 
+
 	// application components
 	'components'=>array(
 
@@ -114,5 +115,6 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
+		'defaultLanguage'=>'en',
 	),
 );

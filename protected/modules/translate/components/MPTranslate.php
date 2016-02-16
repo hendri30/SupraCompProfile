@@ -68,6 +68,8 @@ class MPTranslate extends CApplicationComponent{
      */
     function missingTranslation($event){
         Yii::import('translate.models.MessageSource');
+        // var_dump($event);
+        // die('called');
         $attributes=array(
         	//'category'=>strtolower($event->category),
             'category'=>$event->category,

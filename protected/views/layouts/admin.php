@@ -30,8 +30,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body class="sticky-header left-side-collapsed">
 	
 	<?php
-	$lan='id';
-	Yii::app()->translate->setLanguage($lan);
+	/*$lan='id';
+	Yii::app()->translate->setLanguage($lan);*/
 	?>
 
 	<section>
