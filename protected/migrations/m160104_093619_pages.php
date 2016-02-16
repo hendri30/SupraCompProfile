@@ -13,8 +13,8 @@ class m160104_093619_pages extends CDbMigration
 			'name'			=>	'varchar (120) NOT NULL',
 			'content'		=>	'text NOT NULL',
 			'thumb_image'	=>	'varchar (100)',
-			'last_login'	=>	'datetime',
 		));
+		$this->addColumn('tbl_pages','last_update','datetime');
 	}
 
 	public function safeDown()
