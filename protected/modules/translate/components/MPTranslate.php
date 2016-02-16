@@ -78,9 +78,6 @@ class MPTranslate extends CApplicationComponent{
             $model=new MessageSource();
             $model->attributes=$attributes;
             
-            // echo $model->category;
-            // echo '==========='. MessageSource::model()->exists('category = :category', array(":category"=>$model->category));
-            
             $cek = MessageSource::model()->exists('category = :category', array(":category"=>$model->category));
             if ($cek == Null){
                 if(!$model->save())

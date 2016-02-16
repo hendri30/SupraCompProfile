@@ -63,10 +63,10 @@
 							$translate=Yii::app()->translate;
 							echo $translate->dropdown();
 							// if(!Yii::app()->user->isGuest){
-								// if($translate->hasMessages()){
-								// 	echo $translate->translateLink('Translate');
-								// 	echo $translate->translateDialogLink('Translate','Translate page title');
-								// }
+							// 	if($translate->hasMessages()){
+							// 		echo $translate->translateLink('Translate');
+							// 		echo $translate->translateDialogLink('Translate','Translate page title');
+							// 	}
 							// 	echo $translate->editLink('<br>Edit translations page<br>');
 							// 	echo $translate->missingLink('Missing translations page');
 							// }
@@ -78,7 +78,7 @@
 		</nav><!--/nav-->
 	</header><!--/header-->
 
-	<section id="main-slider">
+	<section id="main-slider" style="margin-top:5px;">
 		<div class="owl-carousel">
 			<?php $this->widget('SliderWidget'); ?>
 		</div><!--/.owl-carousel-->
