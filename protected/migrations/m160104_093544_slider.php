@@ -11,9 +11,9 @@ class m160104_093544_slider extends CDbMigration
 			'qoutes'		=>	'text',
 			'file_name'		=>	'varchar (255) NOT NULL',
 			'active'		=>	'boolean NOT NULL',
-			'last_login'	=>	'datetime',
 		));
 		$this->addColumn('tbl_slider','sequence','int(2) NOT NULL');
+		$this->addColumn('tbl_slider','last_update','datetime');
 	}
 
 	public function safeDown()
