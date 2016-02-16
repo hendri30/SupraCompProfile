@@ -232,11 +232,13 @@ class PartnerController extends Controller
 			'criteria'=>array(
 				'condition'=>'t.category="Partner"',
 			),
+			'pagination'=>false,
 		));
 		$dataProviderProduct=new CActiveDataProvider('Partner',array(
 			'criteria'=>array(
-				'condition'=>'t.category="Product"',
+				'condition'=>'t.category="Distributor"',
 			),
+			'pagination'=>false,
 		));
 		$this->render('index',array(
 			'dataProviderPartner'=>$dataProviderPartner,

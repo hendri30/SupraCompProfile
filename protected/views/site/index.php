@@ -5,7 +5,7 @@
 			<div class="row">
 				<div class="col-sm-9">
 					<h2><?php echo Yii::t('More than just a Service','More than just a Service'); ?></h2>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+					<!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p> -->
 				</div>
 				<div class="col-sm-3 text-right">
 					<a class="btn btn-danger btn-lg btn-scroll-to" href="#about"><?php echo Yii::t('Lets Check It Out!','Lets Check It Out!'); ?></a>
@@ -19,9 +19,9 @@
 			<div class="section-header">
 				<h2 class="section-title text-center wow fadeInDown">
 					<?php foreach($about as $tentang){} ?>
-					<?php echo Yii::t('pages_name/'.$tentang->id,$tentang->name); ?>
+					<?php echo $tentang->name; ?>
 				</h2>
-				<p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
 			</div>
 			<div class="row">
 				<div class="col-sm-6 wow fadeInLeft">
@@ -33,10 +33,7 @@
 				</div>
 				<div class="col-sm-6 wow fadeInRight">
 					<h3 class="column-title"><?php echo Yii::t('Line Of Bussines','Line Of Bussines'); ?></h3>
-					<?php
-					$konten=Yii::t('pages_content/'.$tentang->id,$tentang->content);
-					echo substr($konten,0,700);
-					?>
+					<?php echo substr($tentang->content,0,690).'...'; ?>
 					<div>
 						<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('about'); ?>"><?php echo Yii::t('Learn More','Learn More'); ?></a>
 					</div>
@@ -50,9 +47,9 @@
 			<div class="section-header">
 				<h2 class="section-title text-center wow fadeInDown">
 					<?php foreach($features as $fitur){} ?>
-					<?php echo Yii::t('pages_name/'.$fitur->id,$fitur->name); ?>
+					<?php echo $fitur->name; ?>
 				</h2>
-				<p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
 			</div>
 			<div class="row">
 				<div class="col-sm-6 wow fadeInLeft">
@@ -61,7 +58,7 @@
 				<div class="col-sm-6">
 					<div class="media service-box wow fadeInRight">
 						<div class="pull-left">
-							<?php echo Yii::t('pages_content/'.$fitur->id,$fitur->content); ?>
+							<?php echo $fitur->content; ?>
 							<div>
 								<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('features'); ?>"><?php echo Yii::t('Learn More','Learn More'); ?></a>
 							</div>
@@ -77,23 +74,41 @@
 			<div class="section-header">
 				<h2 class="section-title text-center wow fadeInDown">
 					<?php foreach ($services as $layanan) {} ?>
-					<?php echo Yii::t('pages_name/'.$layanan->id,$layanan->name); ?>
+					<?php echo $layanan->name; ?>
 				</h2>
-				<p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
 			</div>
 			<div class="row">
 				<div class="features">				
-					<?php echo Yii::t('pages_content/'.$layanan->id,$layanan->content); ?>
+					<?php echo $layanan->content; ?>
 				</div>
 			</div><!--/.row-->
 		</div><!--/.container-->
 	</section><!--/#services-->
 
+	<section id="work-process">
+		<div class="container">
+			<div class="section-header">
+				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('Authorized Distributor','Authorized Distributor'); ?></h2>
+				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
+			</div>
+			<div class="row text-center">
+				<?php $i=1; foreach ($product as $produk): ?>
+				<div class="col-sm-6 col-md-3">
+					<div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
+						<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl.'/images/partner/'.$produk->file_name; ?>" alt="">
+					</div>
+				</div>
+				<?php $i++; endforeach; ?>
+			</div>
+		</div>
+	</section><!--/#work-process-->
+
 	<section id="portfolio">
 		<div class="container">
 			<div class="section-header">
 				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('Our Partners','Our Partners'); ?></h2>
-				<p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
 			</div>
 			<?php /*<div class="text-center">
 				<ul class="portfolio-filter">
@@ -118,29 +133,11 @@
 		</div><!--/.container-->
 	</section><!--/#portfolio-->
 
-	<section id="work-process">
-		<div class="container">
-			<div class="section-header">
-				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('Our Product','Our Product'); ?></h2>
-				<p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
-			</div>
-			<div class="row text-center">
-				<?php $i=1; foreach ($product as $produk): ?>
-				<div class="col-sm-6 col-md-3">
-					<div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
-						<img class="img-responsive" src="<?php echo Yii::app()->request->baseUrl.'/images/partner/'.$produk->file_name; ?>" alt="">
-					</div>
-				</div>
-				<?php $i++; endforeach; ?>
-			</div>
-		</div>
-	</section><!--/#work-process-->
-
 	<section id="meet-team">
 		<div class="container">
 			<div class="section-header">
 				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('Meet The Team','Meet The Team'); ?></h2>
-				<p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
 			</div>
 			<div class="row">
 				<?php $i=1; foreach ($team as $tim): ?>
@@ -170,7 +167,7 @@
 		<div class="container">
 			<div class="section-header">
 				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('Latest Blogs','Latest Blogs'); ?></h2>
-				<p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
 			</div>
 			<div class="row">
 				<?php $i=1; foreach ($news as $berita): ?>
@@ -186,7 +183,7 @@
 								<h2 class="entry-title"><a href="#"><?php echo $berita->title; ?></a></h2>
 							</header>
 							<div class="entry-content">
-								<p><?php echo Yii::t('news/'.$berita->id,$berita->content); ?></p>
+								<p><?php echo $berita->content; ?></p>
 								<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('news/view',['id'=>$berita->id]) ?>"><?php echo Yii::t('Read More','Read More'); ?></a>
 							</div>
 							<footer class="entry-meta">
@@ -210,7 +207,7 @@
 									<h2 class="entry-title"><a href="#"><?php echo $berita->title; ?></a></h2>
 								</header>
 								<div class="entry-content">
-									<p><?php echo Yii::t('news/'.$berita->id,$berita->content); ?></p>
+									<p><?php echo $berita->content; ?></p>
 									<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('news/view',['id'=>$berita->id]) ?>"><?php echo Yii::t('Read More','Read More'); ?></a>
 								</div>
 								<footer class="entry-meta">
@@ -232,7 +229,7 @@
 		<div class="container">
 			<div class="section-header">
 				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('Get in Touch','Get in Touch'); ?></h2>
-				<p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
 			</div>
 		</div>
 	</section><!--/#get-in-touch-->
@@ -258,4 +255,4 @@
 		</div>
 	</section><!--/#bottom-->
 
-<!-- END OF CONTENT INDEX PAGE -->
+<!-- END OF CONTENT INDEX PAGE

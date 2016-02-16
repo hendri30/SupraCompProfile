@@ -75,7 +75,8 @@ return array(
 			'caseSensitive'=>false,
 			'rules'=>array(
 				// 'page/<name:[\w\-]+>'=>'pages/url',
-				'<key:(about|features|services|conveyor_maintenance|overland_belt_installation_belt_change_out|belt_splicing|pulley_lagging|belt_repair|belt_clamp|belt_care|belt_cleaning_system|air_cannon|transfer_point_solutions|locking_device|fluid_coupling|vulcanizing_equipment|conveyor_belting|conveyor_idler|yeloroll|surface_protection|fabrication|trelleborg|mclanahan)>'=>'pages/url',
+				'sitemap.xml'=>'site/sitemap',
+				'<key:(about|features|services|service_conveyor_maintenance|service_overland_belt_installation_belt_change_out|service_belt_splicing|service_pulley_lagging|service_belt_repair|service_belt_clamp|service_surface_protection|belt_care|belt_cleaning_system|air_cannon|transfer_point_solutions|locking_device|fluid_coupling|vulcanizing_equipment|conveyor_belting|conveyor_idler|yeloroll|fabrication|trelleborg|mclanahan)>'=>'pages/url',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',

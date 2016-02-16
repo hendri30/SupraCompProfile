@@ -108,4 +108,5 @@ class Contacts extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
 }

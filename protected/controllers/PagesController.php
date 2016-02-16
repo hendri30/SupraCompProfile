@@ -59,12 +59,9 @@ class PagesController extends Controller
 	{
 		$this->layout='main';
 
-		$criteria=new CDbCriteria(array(
-			'condition'=>'t.meta_tag="Services"',
-			'order'=>'id DESC',
-		));
+		$criteria=new CDbCriteria(array('condition'=>'t.meta_tag="Services"'));
 		$services=Pages::model()->findAll($criteria);
-
+		
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 			'services'=>$services,
@@ -75,23 +72,31 @@ class PagesController extends Controller
 	public function actionUrl($key)
 	{
 		$this->layout='main';
+
 		if($key)
 		{
+
 			$key=implode(' ', explode('-', $key));
 			$model=Pages::model()->findByAttributes(array('key'=>$key));
-			
-			$criteria=new CDbCriteria(array(
-				'condition'=>'t.meta_tag="Services"',
-				'order'=>'id DESC',
-			));
-			$services=Pages::model()->findAll($criteria);
+			// var_dump($model);
 
 			if ($model==null)
 				throw new CHttpException(404, 'Page Not Found');
-			$this->render('view',array(
-				'model'=>$model,
-				'services'=>$services,
-			));
+			// var_dump($model);
+			$services = [];
+			// die('aaa');
+			// die('bbbccc');
+			// var_dump($key);
+			if(preg_match('/service_/', $key)){
+				// die('aaa000');
+				$q = new CDbCriteria();
+				$q->addSearchCondition("'key'", 'service_');
+				 
+				$services = Pages::model()->findAllByAttributes([],"meta_tag like 'Services'");
+
+				// var_dump($services);
+			}
+			$this->render('view',array('model'=>$model,'services'=>$services));
 		}
 		else
 			throw new CHttpException(404, 'Page Not Found');
@@ -115,6 +120,7 @@ class PagesController extends Controller
 			$fileName="{$wkt}_{$rnd}_{$file}";
 			$model->attributes=$_POST['Pages'];
 			$model->thumb_image=$fileName;
+			$model->last_update=new CDbExpression('NOW()');
 			if(isset($file)){
 				if($model->save()){
 					$file->saveAs(Yii::app()->basePath.self::URLUPLOAD.$model->thumb_image);
@@ -158,7 +164,7 @@ class PagesController extends Controller
 				if(empty($cekfile)){
 					$model->attributes=$_POST['Pages'];
 					$model->thumb_image=$thumb_image;
-					
+					$model->last_update=new CDbExpression('NOW()');
 					if($model->save()){
 						$notif=Yii::app()->getComponent('user');
 						$notif->setFlash('success',"<strong>Update Pages Success!</strong>");
@@ -178,7 +184,7 @@ class PagesController extends Controller
 					$file=CUploadedFile::getInstance($model,'thumb_image');
 					$fileName="{$wkt}_{$rnd}_{$file}";
 					$model->thumb_image=$fileName;
-					
+					$model->last_update=new CDbExpression('NOW()');
 					if($model->save()){
 						$file->saveAs(Yii::app()->basePath.self::URLUPLOAD.$model->thumb_image.'');
 						$notif=Yii::app()->getComponent('user');
@@ -196,7 +202,7 @@ class PagesController extends Controller
 				if(empty($cekfile)){
 					$model->attributes=$_POST['Pages'];
 					$model->thumb_image=$thumb_image;
-					
+					$model->last_update=new CDbExpression('NOW()');
 					if($model->save()){
 						$notif=Yii::app()->getComponent('user');
 						$notif->setFlash('success',"<strong>Update Pages Success!</strong>");
@@ -215,7 +221,7 @@ class PagesController extends Controller
 					$file=CUploadedFile::getInstance($model,'thumb_image');
 					$fileName="{$wkt}_{$rnd}_{$file}";
 					$model->thumb_image=$fileName;
-					
+					$model->last_update=new CDbExpression('NOW()');
 					if($model->save()){
 						$file->saveAs(Yii::app()->basePath.self::URLUPLOAD.$model->thumb_image.'');
 						$notif=Yii::app()->getComponent('user');

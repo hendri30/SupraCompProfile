@@ -30,14 +30,14 @@ class Pages extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, content', 'required'),
+			array('name, content, last_update', 'required'),
 			array('key', 'length', 'max'=>80),
 			array('name, thumb_image', 'length', 'max'=>120),
 			//array('thumb_image', 'file', 'types'=>'jpg, gif, png'),
 			array('meta_tag, meta_desc', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, key, meta_tag, meta_desc, name, content, thumb_image', 'safe', 'on'=>'search'),
+			array('id, key, meta_tag, meta_desc, name, content, thumb_image, last_update', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,6 +65,7 @@ class Pages extends CActiveRecord
 			'name' => 'Name',
 			'content' => 'Content',
 			'thumb_image' => 'Thumb Image',
+			'last_update' => 'Last Update',
 		);
 	}
 
@@ -93,6 +94,7 @@ class Pages extends CActiveRecord
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('content',$this->content,true);
 		$criteria->compare('thumb_image',$this->thumb_image,true);
+		$criteria->compare('last_update',$this->last_update,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -108,5 +110,15 @@ class Pages extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public function afterFind()
+	{
+		$bahasa=Yii::app()->translate->getLanguage();
+		if ($bahasa) {
+			$this->name = Yii::t('pages-name/'.$this->id,$this->name);
+			$this->content = Yii::t('pages-content/'.$this->id,$this->content);
+			return true;
+		}
 	}
 }

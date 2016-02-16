@@ -23,18 +23,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/icon-font.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/animate.css" media="all">
 
-	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/Chart.js"></script>
-	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/wow.min.js"></script>
-	<script>
-		new WOW().init();
-	</script>
-
 	<link href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
 
 </head> 
    
 <body class="sticky-header left-side-collapsed">
 	
+	<?php
+	$lan='id';
+	Yii::app()->translate->setLanguage($lan);
+	?>
+
 	<section>
 
 		<!-- left side menu start -->

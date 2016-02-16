@@ -35,17 +35,17 @@
 								</div>
 								<div class="entry-date"><?php echo $model->date_create; ?></div>
 								<?php if(!Yii::app()->user->isGuest){ ?>
-								<h2 class="entry-title" id="title" contenteditable="true"><?php echo Yii::t('news_title/'.$model->id,$model->title); ?></h2>
+								<h2 class="entry-title" id="title" contenteditable="true"><?php echo $model->title; ?></h2>
 								<?php } ?>
 							</header>
 							<?php if(!Yii::app()->user->isGuest){ ?>
 							<div class="entry-content" id="content" contenteditable="true">
-								<?php echo Yii::t('news/'.$model->id,$model->content); ?>
+								<?php echo $model->content; ?>
 							</div>
 							<?php } ?>
 							<?php if(Yii::app()->user->isGuest){ ?>
 							<div class="entry-content">
-								<?php echo Yii::t('news/'.$model->id,$model->content); ?>
+								<?php echo $model->content; ?>
 							</div>
 							<?php } ?>
 							<footer class="entry-meta">

@@ -23,9 +23,19 @@
 			'type'=>'raw',
 			'value'=>'CHtml::image(Yii::app()->baseUrl.\'/images/news/\'.$data->file_name,\'\',array("width"=>80,"height"=>50))',
 		),
-		'content',
-		'date_create',
-		'date_update',
+		array(
+			'name'=>'content',
+			'value'=>'strlen($data->content) > 5 ? substr($data->content, 0, 100)."..." : $data->content',
+		),
+		array(
+			'name'=>'date_create',
+			'htmlOptions'=>array('style'=>'width:180px;'),
+		),
+		array(
+			'name'=>'date_update',
+			'htmlOptions'=>array('style'=>'width:180px;'),
+		),
+		
 		/*
 		'meta_tags',
 		'meta_desc',

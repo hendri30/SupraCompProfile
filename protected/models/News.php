@@ -111,4 +111,14 @@ class News extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	public function afterFind()
+	{
+		$bahasa=Yii::app()->translate->getLanguage();
+		if ($bahasa) {
+			$this->title = Yii::t('news-title/'.$this->id,$this->title);
+			$this->content = Yii::t('news-content/'.$this->id,$this->content);
+			return true;
+		}
+	}
 }
