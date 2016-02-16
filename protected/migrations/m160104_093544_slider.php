@@ -13,6 +13,7 @@ class m160104_093544_slider extends CDbMigration
 			'active'		=>	'boolean NOT NULL',
 			'last_login'	=>	'datetime',
 		));
+		$this->addColumn('tbl_slider','sequence','int(2) NOT NULL');
 	}
 
 	public function safeDown()
