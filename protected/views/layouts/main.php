@@ -88,7 +88,7 @@
 					&copy; <?php echo date('Y'); ?> PT SUPRABAKTI MANDIRI. Designed by <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>
 				</div>
 				<div class="col-sm-6" style="text-align:end;">
-					<a href="<?php echo Yii::app()->createUrl('site/sitemap'); ?>">SITEMAP</a>
+					<a href="<?php echo Yii::app()->createAbsoluteUrl('site/sitemap'); ?>">SITEMAP</a>
 				</div>
 			</div>
 		</div>

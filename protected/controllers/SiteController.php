@@ -69,6 +69,27 @@ class SiteController extends Controller
 		if(isset($_GET['Contacts']))
 			$model->attributes=$_GET['Contacts'];
 		
+		$bahasaYangPilih=Yii::app()->translate->getLanguage();
+		$bahasaDefault = Yii::app()->params['defaultLanguage'];
+		$core1 = Yii::t('core\\1','More than just a Service');
+		$core2 = Yii::t('core\\2','Learn More');
+		$core3 = Yii::t('core\\3','Video Introduction');
+		$core4 = Yii::t('core\\4','Line of Business');
+		$core5 = Yii::t('core\\5','Authorized Distributor');
+		$core6 = Yii::t('core\\6','Our Partners');
+		$core7 = Yii::t('core\\7','Meet The Team');
+		$core8 = Yii::t('core\\8','Latest Blogs');
+		$core9 = Yii::t('core\\9','Read More');
+		$core10 = Yii::t('core\\10','Get In Touch');
+		$core11 = Yii::t('core\\11','Contact Info');
+		$core12 = Yii::t('core\\12','Address');
+		$core13 = Yii::t('core\\13','Phone');
+		if ($bahasaYangPilih == $bahasaDefault) {
+			$core;
+		} else {
+			$core;
+		}
+
 		$this->render('index',array(
 			'about'=>$about,
 			'features'=>$features,
@@ -78,6 +99,19 @@ class SiteController extends Controller
 			'team'=>$team,
 			'news'=>$news,
 			'model'=>$model,
+			'core1'=>$core1,
+			'core2'=>$core2,
+			'core3'=>$core3,
+			'core4'=>$core4,
+			'core5'=>$core5,
+			'core6'=>$core6,
+			'core7'=>$core7,
+			'core8'=>$core8,
+			'core9'=>$core9,
+			'core10'=>$core10,
+			'core11'=>$core11,
+			'core12'=>$core12,
+			'core13'=>$core13,
 		));
 	}
 

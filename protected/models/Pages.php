@@ -119,12 +119,10 @@ class Pages extends CActiveRecord
 		$bahasaDefault = Yii::app()->params['defaultLanguage'];
 		$main['name'] = $this->name;
 		$main['content'] = $this->content;
-		// die($main['name']);
+		
 		$this->name = Yii::t('pages\\name\\'.$this->id, 'name' );
 		$this->content = Yii::t('pages\\content\\'.$this->id, 'content');
-		// die();
-		var_dump($bahasaYangPilih);
-		var_dump($bahasaDefault);
+		
 		if ($bahasaYangPilih == $bahasaDefault) {
 			// kalo bahasa nya sama dengan default
 			$this->name = $main['name'];
@@ -133,7 +131,6 @@ class Pages extends CActiveRecord
 			if($translate->hasMessages()){
 				$this->name = $main['name'];
 				$this->content = $main['content'];
-				// die($main['name']);
 			}
 		}
 

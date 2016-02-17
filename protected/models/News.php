@@ -114,11 +114,26 @@ class News extends CActiveRecord
 
 	public function afterFind()
 	{
-		$bahasa=Yii::app()->translate->getLanguage();
-		if ($bahasa) {
-			$this->title = Yii::t('news\\title\\'.$this->id, 'title');
-			$this->content = Yii::t('news\\content\\'.$this->id, 'content');
-			return true;
+		$translate = Yii::app()->translate;
+		$bahasaYangPilih=Yii::app()->translate->getLanguage();
+		$bahasaDefault = Yii::app()->params['defaultLanguage'];
+		$main['title'] = $this->title;
+		$main['content'] = $this->content;
+		
+		$this->title = Yii::t('news\\title\\'.$this->id, 'title' );
+		$this->content = Yii::t('news\\content\\'.$this->id, 'content');
+		
+		if ($bahasaYangPilih == $bahasaDefault) {
+			// kalo bahasa nya sama dengan default
+			$this->title = $main['title'];
+			$this->content = $main['content'];
+		}else{
+			if($translate->hasMessages()){
+				$this->title = $main['title'];
+				$this->content = $main['content'];
+			}
 		}
+
+		return true;
 	}
 }
