@@ -71,21 +71,27 @@ class MPTranslate extends CApplicationComponent{
         // var_dump($event);
         // die('called');
         $attributes=array(
-        	//'category'=>strtolower($event->category),
-            'category'=>$event->category,
-        	//'message'=>strtolower($event->message),
-            'message'=>$event->message,
+        	'category'=>strtolower($event->category),
+            // 'category'=>$event->category,
+        	'message'=>strtolower($event->message),
+            // 'message'=>$event->message,
         );
+        // if(($model=MessageSource::model()->find('LOWER(message)=:message AND LOWER(category)=:category',$attributes))===null){
+        //     $model=new MessageSource();
+        //     $model->attributes=$attributes;
+            
+        //     $cek = MessageSource::model()->exists('category = :category', array(":category"=>$model->category));
+        //     if ($cek == Null){
+        //         if(!$model->save())
+        //         return Yii::log(TranslateModule::t('Message '.$event->message.' could not be added to messageSource table'));;    
+        //     }
+            
+        // }
         if(($model=MessageSource::model()->find('LOWER(message)=:message AND LOWER(category)=:category',$attributes))===null){
             $model=new MessageSource();
             $model->attributes=$attributes;
-            
-            $cek = MessageSource::model()->exists('category = :category', array(":category"=>$model->category));
-            if ($cek == Null){
-                if(!$model->save())
-                return Yii::log(TranslateModule::t('Message '.$event->message.' could not be added to messageSource table'));;    
-            }
-            
+            if(!$model->save())
+                return Yii::log(TranslateModule::t('Message '.$event->message.' could not be added to messageSource table'));;
         }
         if($model->id){
             if($this->autoTranslate && substr($event->language,0,2)!==substr(Yii::app()->sourceLanguage,0,2)){//&& key_exists($event->language,$this->getGoogleAcceptedLanguages($event->language))

@@ -4,11 +4,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-9">
-					<h2><?php echo Yii::t('core\\1','More than just a Service'); ?></h2>
+					<h2><?php echo Yii::t('core','More than just a Service'); ?></h2>
 					<!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p> -->
 				</div>
 				<div class="col-sm-3 text-right">
-					<a class="btn btn-danger btn-lg btn-scroll-to" href="#about"><?php echo Yii::t('core\\2','Learn More'); ?></a>
+					<a class="btn btn-danger btn-lg btn-scroll-to" href="#about"><?php echo Yii::t('core','Learn More'); ?></a>
 				</div>
 			</div>
 		</div>
@@ -25,17 +25,17 @@
 			</div>
 			<div class="row">
 				<div class="col-sm-6 wow fadeInLeft">
-					<h3 class="column-title"><?php echo Yii::t('core\\3','Video Introduction'); ?></h3>
+					<h3 class="column-title"><?php echo Yii::t('core','Video Introduction'); ?></h3>
 					<!-- 16:9 aspect ratio -->
 					<div class="embed-responsive embed-responsive-16by9">
 						<iframe src="https://www.youtube.com/embed/5tSTmwwGT80" frameborder="0" allowfullscreen></iframe>
 					</div>
 				</div>
 				<div class="col-sm-6 wow fadeInRight">
-					<h3 class="column-title"><?php echo Yii::t('core\\4','Line of Business'); ?></h3>
+					<h3 class="column-title"><?php echo Yii::t('core','Line of Business'); ?></h3>
 					<?php echo substr($tentang->content,0,690).'...'; ?>
 					<div>
-						<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('about'); ?>"><?php echo Yii::t('core\\2','Learn More'); ?></a>
+						<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('about'); ?>"><?php echo Yii::t('core','Learn More'); ?></a>
 					</div>
 				</div>
 			</div>
@@ -61,7 +61,7 @@
 						<div class="pull-left">
 							<?php echo $fitur->content; ?>
 							<div>
-								<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('features'); ?>"><?php echo Yii::t('core\\2','Learn More'); ?></a>
+								<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('features'); ?>"><?php echo Yii::t('core','Learn More'); ?></a>
 							</div>
 						</div>
 					</div>
@@ -92,7 +92,7 @@
 	<section id="work-process">
 		<div class="container">
 			<div class="section-header">
-				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('core\\5','Authorized Distributor'); ?></h2>
+				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('core','Authorized Distributor'); ?></h2>
 				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
 			</div>
 			<div class="row text-center">
@@ -110,7 +110,7 @@
 	<section id="portfolio">
 		<div class="container">
 			<div class="section-header">
-				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('core\\6','Our Partners'); ?></h2>
+				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('core','Our Partners'); ?></h2>
 				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
 			</div>
 			<?php /*<div class="text-center">
@@ -139,7 +139,7 @@
 	<section id="meet-team">
 		<div class="container">
 			<div class="section-header">
-				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('core\\7','Meet The Team'); ?></h2>
+				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('core','Meet The Team'); ?></h2>
 				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
 			</div>
 			<div class="row">
@@ -169,7 +169,7 @@
 	<section id="blog">
 		<div class="container">
 			<div class="section-header">
-				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('core\\8','Latest Blogs'); ?></h2>
+				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('core','Latest Blogs'); ?></h2>
 				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
 			</div>
 			<div class="row">
@@ -187,7 +187,7 @@
 							</header>
 							<div class="entry-content">
 								<p><?php echo $berita->content; ?></p>
-								<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('news/view',['id'=>$berita->id]) ?>"><?php echo Yii::t('core\\9','Read More'); ?></a>
+								<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('news/view',['id'=>$berita->id]) ?>"><?php echo Yii::t('core','Read More'); ?></a>
 							</div>
 							<footer class="entry-meta">
 								<span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Victor</a></span>
@@ -211,7 +211,7 @@
 								</header>
 								<div class="entry-content">
 									<p><?php echo $berita->content; ?></p>
-									<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('news/view',['id'=>$berita->id]) ?>"><?php echo Yii::t('core\\9','Read More'); ?></a>
+									<a class="btn btn-danger" href="<?php echo Yii::app()->createUrl('news/view',['id'=>$berita->id]) ?>"><?php echo Yii::t('core','Read More'); ?></a>
 								</div>
 								<footer class="entry-meta">
 									<span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Campbell</a></span>
@@ -231,7 +231,7 @@
 	<section id="get-in-touch">
 		<div class="container">
 			<div class="section-header">
-				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('core\\10','Get In Touch'); ?></h2>
+				<h2 class="section-title text-center wow fadeInDown"><?php echo Yii::t('core','Get In Touch'); ?></h2>
 				<!-- <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
 			</div>
 		</div>
@@ -244,11 +244,11 @@
 				<div class="row">
 					<div class="col-sm-4 col-sm-offset-8">
 						<div class="contact-form">
-							<h3><?php echo Yii::t('core\\11','Contact Info'); ?></h3>
+							<h3><?php echo Yii::t('core','Contact Info'); ?></h3>
 							<address>
 								<strong>PT SUPRABAKTI MANDIRI</strong><br>
-								<?php echo Yii::t('core\\12','Address'); ?>: Jl. Danau Sunter Utara Blok A No. 9, Sunter Agung, Daerah Khusus Ibukota Jakarta.<br>
-								<?php echo Yii::t('core\\13','Phone'); ?>: (021) 65833666
+								<?php echo Yii::t('core','Address'); ?>: Jl. Danau Sunter Utara Blok A No. 9, Sunter Agung, Daerah Khusus Ibukota Jakarta.<br>
+								<?php echo Yii::t('core','Phone'); ?>: (021) 65833666
 							</address>
 							<?php echo $this->renderPartial('contact', array('model'=>$model)); ?>
 						</div>

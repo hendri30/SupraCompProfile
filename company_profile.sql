@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 16, 2016 at 12:01 PM
+-- Generation Time: Feb 17, 2016 at 05:55 AM
 -- Server version: 5.6.25
 -- PHP Version: 5.5.27
 
@@ -118,8 +118,8 @@ INSERT INTO `tbl_migration` (`version`, `apply_time`) VALUES
 ('m160104_093715_contacts', 1451975976),
 ('m160105_101845_user', 1453172184),
 ('m160105_101858_level', 1453172184),
-('m160121_090629_translate_source', 1453694551),
-('m160121_090636_translate_result', 1453694551);
+('m160121_090629_translate_source', 1455684895),
+('m160121_090636_translate_result', 1455684899);
 
 -- --------------------------------------------------------
 
@@ -284,14 +284,6 @@ CREATE TABLE IF NOT EXISTS `tbl_translate_result` (
   `translation` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tbl_translate_result`
---
-
-INSERT INTO `tbl_translate_result` (`id`, `language`, `translation`) VALUES
-(421, 'id', '<p>Tentang Kami</p>\r\n'),
-(445, 'id', '<p>Lebih dari 25 tahun Supra telah melayani penanganan masalah kebutuhan material besar dari perawatan conveyor belt. Kami memberikan inovasi conveyor dalam pelayanan conveyor belt, bermula dari sebagai penyambung pita transpor (belt splicer) sekarang kami menawarkan pelayanan menyeluruh untuk perawatan conveyor. Pengalaman luas dan mendalam kami menguatkan pemahaman kami akan kebutuhan anda, yang memungkinkan kami untuk mengatur seluruh aspek dari tujuan alih daya (outsourcing) anda.</p>\r\n\r\n<p>Kami menerapkan teknologi dan metode terbaik untuk keamanan, kehandalan, dan keproduktivitasan dari pengoperasian conveyor.</p>\r\n\r\n<p>Kami mengadakan kunci metrik performa dan pembandingan agar anda dapat mengukur performa kami. Metrik kami meliputi tidak hanya keproduktivitasannya akan tetapi juga etika keselamatan dan kesadaran kami.</p>\r\n\r\n<p>&ldquo;Supra adalah perusahaan lapisan industri dan perawatan conveyor belt pertama di Indonesia yang beroperasi di bawah sistem kualitas ISO 9000&rdquo;.</p>\r\n\r\n<p>Supra beroperasi diseluruh wilayah Indonesia dengan melayani penambangan, penyemenan, pembangkit tenaga listrik, fasilitas pelabuhan, pabrik baja, pupuk, pabrik bubur kayu dan kertas, emprosesan mineral tambang, dan pabrik &ndash; pabrik industri lainnya.</p>\r\n\r\n<p>Kehandalan kami dalam perawatan conveyor memberikan kami kemampuan untuk menjalankan proyek opsir penjara secara menyeluruh dari pemasangan conveyor belt darat, penyambungan, pengawasan, dan pemeliharaan sistem.</p>\r\n\r\n<p>Kami dapat merubah pelayanan kami untuk hanya meliputi bantuan yang anda butuhkan, dari bimbingan dan pengawasan, audit conveyor dan survey lapangan, perawatan pencegahan sampai dengan operasi, dan perawatan yang mana kami melakukan pengoperasian dan perawatan secara penuh dari sistem conveyor. Kami telah berpengalaman dengan berbagai perjanjian kontrak, yang meliputi perjanjian dengan pembayaran besar dimuka dan perjanjian dengan ketentuan yang buruk.</p>\r\n\r\n<p>Kami menyediakan berbagai macam produk menyeluruh untuk:</p>\r\n\r\n<div class="row">\r\n<ul>\r\n	<li>Perawatan conveyor belt</li>\r\n	<li>Komponen-komponen conveyor</li>\r\n	<li>Conveyor Drive</li>\r\n	<li>Alat pengaman conveyor</li>\r\n	<li>Alat detektor sobekan pada conveyor belt</li>\r\n	<li>Baju dan pelindung dari korosi</li>\r\n	<li>Penggempuran dan penyaringan</li>\r\n	<li>Penambatan dan pelabuhan kapal</li>\r\n</ul>\r\n</div>');
-
 -- --------------------------------------------------------
 
 --
@@ -302,37 +294,7 @@ CREATE TABLE IF NOT EXISTS `tbl_translate_source` (
   `id` int(11) NOT NULL,
   `category` varchar(32) DEFAULT NULL,
   `message` text
-) ENGINE=InnoDB AUTO_INCREMENT=446 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_translate_source`
---
-
-INSERT INTO `tbl_translate_source` (`id`, `category`, `message`) VALUES
-(421, 'pages-name/23', 'About Us'),
-(423, 'pages-name/12', 'Our Features'),
-(424, 'pages-content/12', '<p><strong>Suprabakti Mandiri, PT.</strong> management have and uphold the commitment to safety, occupational health for employees in every form of work activity, be it in the field/operation or in the office. This is evidenced by his MANDATORY every employee in the field doing Induction Safety, Safety Talk every morning before work activities, conduct periodic health examinations of employees each year (Medical Check Up), requires that PPE is used in every activity of work, the replacement of PPE regularly.</p>\r\n\r\n<p><span id="result_box" lang="en" tabindex="-1"><strong><span title="SUPRA SAFETY COMMITMENTS\r\n">SUPRA SAFETY Commitments</span></strong><br />\r\n<span title="Mewujudkan Lingkungan Kerja yang Aman Tanpa Potensi Bahaya\r\n">Realising Safe Working Environment Without Potential Dangers</span><br />\r\n<span title="(Achieving Work Safe Environtment with Zero Incident)\r\n">(Achieving Safe Work Environment with Zero Incident)</span></span></p>\r\n\r\n<ol>\r\n	<li>SAFETY BE A PART OF LIFE AND CULTURE WE WORK TOGETHER\r\n	<ul>\r\n		<li>Mutual reminder of the importance of safety</li>\r\n		<li>Safety is a shared responsibility</li>\r\n		<li>Work procedures and safety standards is a benchmark in every job.</li>\r\n		<li>Training and mentoring safety and dikembbangkan implemented on an ongoing basis.</li>\r\n		<li>The working environment clean and tidy part of safety.</li>\r\n	</ul>\r\n	</li>\r\n	<li>Do not tolerate OF POTENTIAL DANGER</li>\r\n	<li>SAFETY a barometer of success AN OCCUPATION AND BUSINESS</li>\r\n	<li>WORK WITH SAFE WILL CREATE A POSITIVE PSYCHOLOGICAL CONDITION FOR EVERY BUSINESS WORK AND FAMILY</li>\r\n	<li>LEADERS AT ALL LEVELS TO BE MODELS OF SAFETY</li>\r\n	<li>SAFETY IS PART OF THE PERFORMANCE ASSESSMENT WORK</li>\r\n	<li>POTENTIAL HAZARD HAVE REPORTED AND PREVENTED as early as possible</li>\r\n	<li>ENSURE WE ALWAYS WORK ENVIRONMENT IN SAFE CONDITIONS</li>\r\n	<li>FACILITIES AND INFRASTRUCTURE WORK MUST BE IN ACCORDANCE WITH THE STANDARD SAFETY</li>\r\n	<li>AUDIT / INSPECTION SAFETY SAFETY IS A TOOL TO MEASURE SUCCESS</li>\r\n</ol>\r\n'),
-(425, 'pages-name/21', 'Our Services'),
-(426, 'pages-content/21', '<div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="300ms">\r\n<div class="media service-box">\r\n<div class="pull-left"><img alt="" class="img-circle img-thumbnail" src="http://suprabakti.co.id/SupraCompProfile/images/services/maintenance.jpg" style="max-height: 120px;" /></div>\r\n\r\n<div class="media-body">\r\n<h4 class="media-heading"><a href="http://suprabakti.co.id/SupraCompProfile/service_conveyor_maintenance">Conveyor&nbsp;Maintenance</a></h4>\r\n\r\n<p>Belt maintenance has been the key service provided by Supra for many years. Starting as the provider of belt splicing&nbsp; to total conveyor&nbsp; maintenance services.</p>\r\n</div>\r\n</div>\r\n</div>\r\n<!--/.col-md-6-->\r\n\r\n<div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="100ms" data-wow-duration="300ms">\r\n<div class="media service-box">\r\n<div class="pull-left"><img alt="" class="img-circle img-thumbnail" src="http://suprabakti.co.id/SupraCompProfile/images/services/overland.jpg" style="max-height: 120px;" /></div>\r\n\r\n<div class="media-body">\r\n<h4 class="media-heading"><a href="http://suprabakti.co.id/SupraCompProfile/service_overland_belt_installation_belt_change_out">Overland Belt Installation &amp; Belt Change Out</a></h4>\r\n\r\n<p>Supra was entrusted to perform the installation and splicing of Freeport DMLZ stage 1 project. The 6,500 tph downhill underground conveying system is one of the most challenging system and is the highest strength of belt in Indonesia.</p>\r\n</div>\r\n</div>\r\n</div>\r\n<!--/.col-md-6-->\r\n\r\n<div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="300ms">\r\n<div class="media service-box">\r\n<div class="pull-left"><img alt="" class="img-circle img-thumbnail" src="http://suprabakti.co.id/SupraCompProfile/images/services/lagging.jpg" style="max-height: 120px;" /></div>\r\n\r\n<div class="media-body">\r\n<h4 class="media-heading"><a href="http://suprabakti.co.id/SupraCompProfile/service_pulley_lagging">Pulley Lagging</a></h4>\r\n\r\n<p>Remagrip CK - ceramic lagging provide excellent grip between pulley and belt. &nbsp;REMAGRIP CK-X is extremely resilient, durable, highly flexible and self-cleaning.</p>\r\n</div>\r\n</div>\r\n</div>\r\n<!--/.col-md-6-->\r\n\r\n<div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="300ms">\r\n<div class="media service-box">\r\n<div class="pull-left"><img alt="" class="img-circle img-thumbnail" src="http://suprabakti.co.id/SupraCompProfile/images/services/beltrepair.jpg" style="max-height: 120px;" /></div>\r\n\r\n<div class="media-body">\r\n<h4 class="media-heading"><a href="http://suprabakti.co.id/SupraCompProfile/service_belt_repair">Belt Repair</a></h4>\r\n\r\n<p>The 26 km overland conveyor steel cord belt suffer from longitudinal rip. The mine approved Supra proposal to use Rema Tip Top cold repair method. Rema Tip Top Repair strip 150mm and 220mm with SC-2000 are used to repair the belt.</p>\r\n</div>\r\n</div>\r\n</div>\r\n<!--/.col-md-6-->\r\n\r\n<div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="300ms">\r\n<div class="media service-box">\r\n<div class="pull-left"><img alt="" class="img-circle img-thumbnail" src="http://suprabakti.co.id/SupraCompProfile/images/services/beltclamp.jpg" style="max-height: 120px;" /></div>\r\n\r\n<div class="media-body">\r\n<h4 class="media-heading"><a href="http://suprabakti.co.id/SupraCompProfile/service_belt_clamp">Belt Clamp</a></h4>\r\n\r\n<p>The Sure Grip belt clamp can apply positive pressure in excess of 6 tones directly to the surface of any belt width&nbsp; while&nbsp; having&nbsp; a&nbsp; pulling ability&nbsp; in&nbsp; excess&nbsp; of&nbsp; 10 tonnes&nbsp; and&nbsp; when&nbsp; linked&nbsp; in&nbsp; tandem&nbsp; can&nbsp; exceed&nbsp; 16 tonnes.</p>\r\n</div>\r\n</div>\r\n</div>\r\n<!--/.col-md-6-->\r\n\r\n<div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="500ms" data-wow-duration="300ms">\r\n<div class="media service-box">\r\n<div class="pull-left"><img alt="" class="img-circle img-thumbnail" src="http://suprabakti.co.id/SupraCompProfile/images/services/surfaceprotection.jpg" style="max-height: 120px;" /></div>\r\n\r\n<div class="media-body">\r\n<h4 class="media-heading"><a href="http://suprabakti.co.id/SupraCompProfile/service_surface_protection">Surface Protection</a></h4>\r\n\r\n<p>Supra is the prominent contractor for rubber lining works, with our in-house resources we are capable for undertaking&nbsp; large&nbsp; seawater&nbsp; intake pipe,&nbsp; large storage tanks, slurry pipeline, relining of FGD.</p>\r\n</div>\r\n</div>\r\n</div>\r\n<!--/.col-md-6-->'),
-(427, 'news-title/1', 'News 01'),
-(428, 'news-content/1', '<p>With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the mate the long iron rod remaining, bade him hold it upright, without its touching off the steel head of the lance, and then handing to the mate the long iron rod remaining. without its touching off the steel without its touching off the steel</p>\n'),
-(429, 'news-title/2', 'News 02'),
-(430, 'news-content/2', '<p>With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the mate the long iron rod remaining, bade him hold it upright, without its touching off the steel head of the lance, and then handing to the mate the long iron rod remaining. without its touching off the steel without its touching off the steel</p>'),
-(431, 'More than just a Service', 'More than just a Service'),
-(432, 'Lets Check It Out!', 'Lets Check It Out!'),
-(433, 'Video Introduction', 'Video Introduction'),
-(434, 'Line Of Bussines', 'Line Of Bussines'),
-(435, 'Learn More', 'Learn More'),
-(436, 'Authorized Distributor', 'Authorized Distributor'),
-(437, 'Our Partners', 'Our Partners'),
-(438, 'Meet The Team', 'Meet The Team'),
-(439, 'Latest Blogs', 'Latest Blogs'),
-(440, 'Read More', 'Read More'),
-(441, 'Get in Touch', 'Get in Touch'),
-(442, 'Contact Info', 'Contact Info'),
-(443, 'Address', 'Address'),
-(444, 'Phone', 'Phone'),
-(445, 'pages-content/23', '<p>For more than 25 years, Supra has served the bulk material handling needs of conveyor belt maintenance. We bring in conveyor innovation in belt conveyor services, starting as belt splicers now we offer complete services for conveyor maintenances. Our breadth and depth of experiences strengthens our understanding of your needs, allowing us to organized all aspects of your outsourcing objectives.</p>\r\n\r\n<p>We apply the best technology and methodology for safe, reliable and productive conveyor operations.</p>\r\n\r\n<p>We set up key performance metric and benchmarking to let you measure our performance. Our metric include not only the productivity but also our safety behavior and awareness.</p>\r\n\r\n<p>&ldquo;Supra is the first conveyor belt maintenance and industrial lining company in Indonesia operate under ISO 9000 quality system&rdquo;.</p>\r\n\r\n<p>Supra operates throughout Indonesia servicing mining, cement, power plant, port facilities, steel mill, fertilizer, pulp and paper, mineral processing and other industrials plants.</p>\r\n\r\n<p>Our expertise in conveyor maintenance give us the ability to execute complete turnkey projects from installation of overland conveyor belt, splicing, commissioning and maintaining the systems.</p>\r\n\r\n<p>We can customized our service to include just the assistance you need, from advising and supervision, conveyor audit and site survey, preventive maintenance to operation and maintenance where we take full ownership of operation and maintenance of the conveying systems. We have experience with a variety of contractual agreements, including lump-sum and turkey provision.</p>\r\n\r\n<p>We provide complete range of products for:</p>\r\n\r\n<div class="row">\r\n<ul>\r\n	<li>conveyor belt maintenance</li>\r\n	<li>conveyor components</li>\r\n	<li>conveyor drive</li>\r\n	<li>conveyor safety devices</li>\r\n	<li>conveyor belt rip detection</li>\r\n	<li>wear and corrosion protection</li>\r\n	<li>crushing and screening</li>\r\n	<li>ship mooring and berthings</li>\r\n</ul>\r\n</div>\r\n');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -425,8 +387,7 @@ ALTER TABLE `tbl_translate_result`
 -- Indexes for table `tbl_translate_source`
 --
 ALTER TABLE `tbl_translate_source`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `category` (`category`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_user`
@@ -482,7 +443,7 @@ ALTER TABLE `tbl_team`
 -- AUTO_INCREMENT for table `tbl_translate_source`
 --
 ALTER TABLE `tbl_translate_source`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=446;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
